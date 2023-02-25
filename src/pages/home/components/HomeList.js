@@ -1,21 +1,18 @@
-import { getDocs } from "firebase/firestore";
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { dataCollectionRef } from "src/helpers/firestoreHelpers";
+import { getAllDataAction } from "src/redux/thunks/homeThunk";
 
 const HomeList = () => {
   const navigate = useNavigate();
-  const [dummyData, setData] = useState([]);
+  const dispatch = useDispatch();
 
-  const fetchDocs = useCallback(async () => {
-    const data = await getDocs(dataCollectionRef);
-    const data2 = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
-    setData(data2);
-  }, []);
-
+  const homeState = useSelector((state) => state.home);
+  const { formListData } = homeState;
   useEffect(() => {
-    fetchDocs();
-  }, [fetchDocs]);
+    dispatch(getAllDataAction());
+    return () => {};
+  }, []);
 
   const navigateToAdd = () => {
     navigate("/app/home/add");
@@ -24,26 +21,6 @@ const HomeList = () => {
     navigate(`/app/home/edit/${item.id}`);
   };
 
-  //   const dummyData = [
-  //     {
-  //       id: "1",
-  //       firstName: "Bharat",
-  //       lastName: "Sonwane",
-  //       gender: "male",
-  //     },
-  //     {
-  //       id: "1",
-  //       firstName: "Kavita",
-  //       lastName: "Savant",
-  //       gender: "Female",
-  //     },
-  //     {
-  //       id: "1",
-  //       firstName: "Kunal",
-  //       lastName: "Kamat",
-  //       gender: "Male",
-  //     },
-  //   ];
   return (
     <div>
       <div className="row">
@@ -55,21 +32,21 @@ const HomeList = () => {
         </div>
       </div>
 
-      <div className="row">
-        <table className="table table-striped">
+      <div className="row ml-2">
+        <table className="table table-striped" style={{ marginLeft: 10 }}>
           <thead>
             <tr>
               <th scope="col">#</th>
               <th scope="col">First</th>
               <th scope="col">Last</th>
-              <th scope="col">Handle</th>
+              <th scope="col">gender</th>
               <th scope="col">Actions</th>
             </tr>
           </thead>
           <tbody>
-            {dummyData &&
-              dummyData[0] &&
-              dummyData.map((item, index) => (
+            {formListData &&
+              formListData[0] &&
+              formListData.map((item, index) => (
                 <tr key={index}>
                   <th scope="row">{item.id}</th>
                   <td>{item.firstName}</td>

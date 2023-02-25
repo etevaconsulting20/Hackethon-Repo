@@ -10,17 +10,19 @@ import {
 } from "src/redux/slice/homeSlice";
 // import { ProductContext } from 'src/pages/products/ProductsContext';
 import CustomTooltip from "src/components/inputComponents/CustomTooltip";
-import { changeProdEditMode } from "src/redux/slice/homeSlice";
+import { changeProdEditMode, changeFormObject, formSaveValidationAction } from "src/redux/slice/homeSlice";
+import { addSpecificFormDataInfoAction, removeSpecificFormDataInfoAction } from "src/redux/thunks/homeThunk";
 import { useNavigate } from "react-router-dom";
-
+import { getValidationErrorObjectForYup } from "src/helpers/validationYupHelper";
+import { toast } from "react-toastify";
 
 const CommonTabComponent = (props) => {
   const { isUpdate } = props;
   const { t } = useTranslation("common");
 
-    const homeState = useSelector((state) => state.home);
+  const homeState = useSelector((state) => state.home);
   const navigate = useNavigate();
-    
+
   const formFieldList = _.get(
     homeState,
     "selectedProductSchema.productFlattenSchema",
@@ -42,7 +44,7 @@ const CommonTabComponent = (props) => {
    */
   useEffect(() => {
     handleDefaultValueObject();
-    return () => {};
+    return () => { };
   }, [JSON.stringify(formFieldList)]);
 
   const handleDefaultValueObject = () => {
@@ -202,42 +204,65 @@ const CommonTabComponent = (props) => {
         ></div>
       );
     }
-    };
-    
-    const handleEdit = () => {
-        dispatch(changeProdEditMode(!homeState.isFormEditMode))
-    }
+  };
 
-    const handleSave = async () => {
+  const handleEdit = () => {
+    dispatch(changeProdEditMode(!homeState.isFormEditMode))
+  }
 
-    }
+  const handleSave = async () => {
+    try {
+      const productFlattenSchema = _.get(homeState, `selectedProductSchema.productFlattenSchema`, [])
+      const { errorMessageObject, errorFieldList } = await getValidationErrorObjectForYup(productFlattenSchema, formValueObject)
 
-    const handleDelete = async () => {
-
-    }
-
-
-    const handleCancel = async () => {
+      if (!_.isEmpty(errorMessageObject) || !_.isEmpty(errorFieldList)) {
+        await dispatch(addSpecificFormDataInfoAction()).unwrap()
+        dispatch(changeFormObject({}))
         navigate('/app/home/list')
+      }
+      else {
+        dispatch(formSaveValidationAction({ errorMessageObject: errorMessageObject, errorFieldList: errorFieldList, }))
+        setTimeout(() => {
+          toast.error("Please validate information.", "Information", 2000);
+        }, 10);
+      }
+    } catch (error) {
+
     }
+  }
+
+  const handleDelete = async () => {
+    try {
+      await dispatch(removeSpecificFormDataInfoAction()).unwrap()
+      dispatch(changeFormObject({}))
+      navigate("/app/home/list")
+    } catch (error) {
+
+    }
+  }
+
+
+  const handleCancel = async () => {
+    navigate('/app/home/list')
+  }
 
 
   return (
     <>
-    <div className="row " >
+      <div className="row " >
         {/* <div className="col-9">
             
         </div>*/}
-        <div className="buttons-edit"> 
-                  <button className="btn btn-primary m-1" onClick={handleSave}>Save</button>
-                  {
-                      isUpdate &&
-                      <>
-                        <button className="btn btn-primary m-1" onClick={handleEdit}>Edit</button>
-                        <button className="btn btn-primary m-1" onClick={handleDelete}>Delete</button>
-                    </>
-                  }
-                  <button className="btn btn-primary m-1" onClick={handleCancel}>Cancel</button>
+        <div className="buttons-edit">
+          <button className="btn btn-primary m-1" onClick={handleSave}>Save</button>
+          {
+            isUpdate &&
+            <>
+              <button className="btn btn-primary m-1" onClick={handleEdit}>Edit</button>
+              <button className="btn btn-primary m-1" onClick={handleDelete}>Delete</button>
+            </>
+          }
+          <button className="btn btn-primary m-1" onClick={handleCancel}>Cancel</button>
         </div>
       </div>
       <div className="row">
