@@ -4,7 +4,7 @@ import { Searchbox } from "src/components/searchbox";
 import { getNewsfeedAction } from "src/redux/thunks/homeThunk";
 import { MdOutlineModeEdit, } from "react-icons/md";
 import { TabAccordion } from "src/components/TabAccordion";
-
+import CommonTabComponent from "src/components/schema/CommonTabComponent";
 
 const HomeList = () => {
   const [search, changeSearch] = useState("");
@@ -49,7 +49,7 @@ const HomeList = () => {
 
   return (
     <>
-
+    <CommonTabComponent />
     </>
   );
 };

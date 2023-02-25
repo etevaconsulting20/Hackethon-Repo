@@ -1,0 +1,11 @@
+.add-input:hover {
+    filter: brightness(85%);
+}
+
+.add-input-form::placeholder {
+    color: #e0e1e2;
+}
+
+.add-input-form:focus {
+    border: 1px solid #85b7d9 !important;
+}

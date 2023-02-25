@@ -1,46 +1,147 @@
 import * as yup from "yup";
+import _ from 'lodash';
+
+
+
+export const validateYupSchemaObject = async (yupSchemaObject, formData) => {
+  try {
+    await yupSchemaObject.validate(formData, { abortEarly: false })
+    return { errorMessageObject: {} }
+  }
+  catch (error) {
+    const errorMessageArray = error.inner;
+    const errorMessageObject = {}
+
+    errorMessageArray && errorMessageArray[0] && errorMessageArray.forEach((item) => {
+      let itemPath
+      try {
+        const pathArray = JSON.parse(item.path)
+        itemPath = pathArray[0]
+      } catch (error) {
+        itemPath = item.path
+      }
+      _.set(errorMessageObject, itemPath, item.message)
+    })
+    return { errorMessageObject: errorMessageObject, }
+  }
+}
 
 export function createYupSchema(schema, config) {
-  const { name, validationType, validations = [] } = config;
+  const { nameUpdated, validationType, validations = [] } = config;
+  const newValidations = [
+    ...validations,
+    {
+      type: "nullable",
+      params: ["Please enter valid information"],
+    }
+  ]
+
   if (!yup[validationType]) {
     return schema;
   }
   let validator = yup[validationType]();
-  validations.forEach(validation => {
+  newValidations.forEach(validation => {
     const { params, type } = validation;
     if (!validator[type]) {
       return;
     }
-    // console.log(type, params);
     validator = validator[type](...params);
   });
-  schema[name] = validator;
+  schema[nameUpdated] = validator;
   return schema;
 }
 
 /**
  * get validation error object for yup validation
- * @param {*} formJsonArray 
+ * @param {*} formFlattenJsonArray 
  * @param {*} formData 
- * @returns errorObject
+ * @returns { errorMessageObject, errorFieldList }
  */
-export const getValidationErrorObjectForYup = async (formJsonArray, formData) => {
+export const getValidationErrorObjectForYup = async (formFlattenJsonArray, formData) => {
+  const updatedFormFlattenJsonArray = formFlattenJsonArray.map((item) => {
+    const newItem = {
+      ...item,
+      nameUpdated: item.nameUpdated ? item.nameUpdated : item.name
+    }
+    return newItem
+  })
+
   try {
     formData = formData ? formData : {}
-    if (formJsonArray && formJsonArray[0]) {
-      const yepSchema = formJsonArray.reduce(createYupSchema, {});
+    if (updatedFormFlattenJsonArray && updatedFormFlattenJsonArray[0]) {
+      const newFormData = {}
+      updatedFormFlattenJsonArray.forEach((item) => {
+        const value = _.get(formData, item.nameUpdated)
+        newFormData[item.nameUpdated] = value
+      })
+
+      const yepSchema = updatedFormFlattenJsonArray.reduce(createYupSchema, {});
       const validateSchema = yup.object().shape(yepSchema);
-      await validateSchema.validate(formData, { abortEarly: false })
+      await validateSchema.validate(newFormData, { abortEarly: false })
     }
-    return {}
+    return { errorMessageObject: {}, errorFieldList: [] }
   } catch (error) {
     const errorMessageArray = error.inner;
-    const errorObject = {}
+    const errorMessageObject = {}
+    const errorFieldList = []
 
     errorMessageArray && errorMessageArray[0] && errorMessageArray.forEach((item) => {
-      errorObject[item.path] = item.message
+      let itemPath
+      try {
+        const pathArray = JSON.parse(item.path)
+        itemPath = pathArray[0]
+      } catch (error) {
+        itemPath = item.path
+      }
+      const errorFieldObject = updatedFormFlattenJsonArray.find((item) => item.nameUpdated === itemPath)
+      errorFieldList.push(errorFieldObject)
+      _.set(errorMessageObject, itemPath, item.message)
     })
-    return errorObject
+    return { errorMessageObject: errorMessageObject, errorFieldList: errorFieldList }
   }
+}
 
+/**
+ * @param {*} fieldObject 
+ * @param {*} fieldValue 
+ * @returns {nameUpdated, errorMessage}
+ */
+export const getValidationErrorForFieldForYup = async (fieldObject, fieldValue) => {
+  const newFieldValue = {}
+  const nameUpdated = fieldObject.nameUpdated ? fieldObject.nameUpdated : fieldObject.name;
+  _.set(newFieldValue, nameUpdated, fieldValue)
+  const { errorMessageObject } = await getValidationErrorObjectForYup([fieldObject], newFieldValue)
+  return { nameUpdated: nameUpdated, errorMessage: _.get(errorMessageObject, nameUpdated, "") }
+}
+
+export const getErrorTabListWithFields = (errorFormFieldflattenJsonArray) => {
+  const tabListWithFields = [
+    /**
+      {
+        parentTab: "",
+        tabName: "tabNameTabName",
+        fieldList: []
+      }
+    */
+  ]
+
+  errorFormFieldflattenJsonArray && errorFormFieldflattenJsonArray[0] && errorFormFieldflattenJsonArray.forEach((item) => {
+    /** add tab */
+    if (!_.find(tabListWithFields, (tab) => tab.tabName === item.tabName)) {
+      tabListWithFields.push(
+        {
+          parentTab: item.parentTab,
+          tabName: item.tabName,
+          fieldList: []
+        }
+      )
+    }
+
+
+    /** adding field in tabs */
+    const tabIndex = _.findIndex(tabListWithFields, (tab) => tab.tabName === item.tabName)
+    tabListWithFields[tabIndex].fieldList.push(item)
+  })
+
+  return tabListWithFields
 }
