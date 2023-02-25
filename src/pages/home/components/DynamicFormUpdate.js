@@ -9,7 +9,7 @@ import { getProductTemplateSchemaAction } from "src/redux/thunks/homeThunk";
 import _ from 'lodash'
 
 
-const DynamicForm = () => {
+const DynamicFormUpdate = () => {
   const [search, changeSearch] = useState("");
   const dispatch = useDispatch();
   const homeState = useSelector(state => state.home)
@@ -34,10 +34,10 @@ const DynamicForm = () => {
 
   return (
     <>
-      <CommonTabComponent 
-        isUpdate={false}
+      <CommonTabComponent
+        isUpdate={true}
       />
     </>
   );
 };
-export default DynamicForm;
+export default DynamicFormUpdate;

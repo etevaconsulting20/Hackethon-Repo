@@ -11,13 +11,15 @@ import {
 // import { ProductContext } from 'src/pages/products/ProductsContext';
 import CustomTooltip from "src/components/inputComponents/CustomTooltip";
 import { changeProdEditMode } from "src/redux/slice/homeSlice";
+import { useNavigate } from "react-router-dom";
 
 
 const CommonTabComponent = (props) => {
-  const { productProfileTabInfo } = props;
+  const { isUpdate } = props;
   const { t } = useTranslation("common");
 
     const homeState = useSelector((state) => state.home);
+  const navigate = useNavigate();
     
   const formFieldList = _.get(
     homeState,
@@ -215,6 +217,10 @@ const CommonTabComponent = (props) => {
     }
 
 
+    const handleCancel = async () => {
+        navigate('/app/home/list')
+    }
+
 
   return (
     <>
@@ -223,9 +229,15 @@ const CommonTabComponent = (props) => {
             
         </div>
         <div className="col-3">
-          <button className="btn btn-primary m-1" onClick={handleSave}>Save</button>
-          <button className="btn btn-primary m-1" onClick={handleEdit}>Edit</button>
-          <button className="btn btn-primary m-1" onClick={handleDelete}>Cancel</button>
+                  <button className="btn btn-primary m-1" onClick={handleSave}>Save</button>
+                  {
+                      isUpdate &&
+                      <>
+                        <button className="btn btn-primary m-1" onClick={handleEdit}>Edit</button>
+                        <button className="btn btn-primary m-1" onClick={handleDelete}>Delete</button>
+                    </>
+                  }
+                  <button className="btn btn-primary m-1" onClick={handleCancel}>Cancel</button>
         </div>
       </div>
       <div className="row">
@@ -241,7 +253,7 @@ const CommonTabComponent = (props) => {
                 key={`formFieldSchemaRender${item.name}_${index}`}
                 index={index}
                 formItem={item}
-                formReadOnly={!isProdEditMode}
+                formReadOnly={!isProdEditMode && isUpdate}
                 formValueObject={formValueObject}
                 formValidationObject={productFormValidation}
                 onBlur={(e) => handleBlurChange(e, item)}
