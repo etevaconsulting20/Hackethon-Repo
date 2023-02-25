@@ -35,14 +35,14 @@ const RootContainer = () => {
           <Route
             path="app/*"
             element={
-              authState.isAuth ? <MainApp /> : <Navigate replace to="/login" />
+              true ? <MainApp /> : <Navigate replace to="/login" />
             }
           />
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<MainApp />} />
           <Route
             path="/"
             element={
-              authState.isAuth ? (
+              true ? (
                 <Navigate replace to="/app" />
               ) : (
                 <Navigate replace to="/login" />

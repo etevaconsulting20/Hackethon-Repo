@@ -51,7 +51,7 @@ export const getAxios = (specificBaseUrl) => {
         //dispatch action using store to show token expire popup-----
         Cookies.remove("token")
         // window.location.pathname = "#/login";
-        window.location = "#/login";
+        // window.location = "#/login";
         return new Promise((resolve, reject) => {
           reject(error);
         });

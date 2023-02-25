@@ -75,7 +75,7 @@ const Header = (props) => {
       "",
       2000
     );
-    navigate("/login");
+    // navigate("/login");
   };
 
   return (

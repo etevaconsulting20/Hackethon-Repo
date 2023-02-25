@@ -49,26 +49,7 @@ const HomeList = () => {
 
   return (
     <>
-      <div
-        className={`p-2 container-fluid d-flex flex-row justify-content-between bg-primary text-white`}
-      >
-        <h4>News and announcements</h4>
-        {/* <div className="w-20">
-          <Searchbox
-            value={search}
-            onChange={onChangeSearch}
-            placeholder={"Search on home"}
-          />
-        </div>
-      </div>
-      <div>
-        {accordionNewsFeedList && accordionNewsFeedList[0] &&
-          <>
-            <TabAccordion accordionData={accordionNewsFeedList}></TabAccordion>
-          </>
-        } */}
 
-      </div>
     </>
   );
 };
