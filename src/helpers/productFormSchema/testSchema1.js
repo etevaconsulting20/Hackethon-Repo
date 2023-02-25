@@ -1,6 +1,26 @@
 export default [
 
     {
+        name: "employeeId",
+        label: "Employee Id",
+        placeholder: "Enter Employee Id",
+        tooltipText: "Employee Id",
+        parentTab: "General",
+        tabName: "Identifier_tab",
+        readOnly: false,
+        type: "number",
+        validationType: "string",
+        validations: [
+            {
+                type: "matches",
+                params: [
+                    "^[0-9]{0}$|^[0-9]{8}$|^[0-9]{12}$|^[0-9]{14}$",
+                    "gtin should be 8 or 12 or 14 character & should be number.",
+                ],
+            },
+        ],
+    },
+    {
         name: "gtin",
         label: "_GTIN",
         placeholder: "",
