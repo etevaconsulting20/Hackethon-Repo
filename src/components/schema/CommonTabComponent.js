@@ -201,36 +201,39 @@ const CommonTabComponent = (props) => {
 
   return (
     <>
-    <div className="row">
-        <div className="col-12">
-            <button className="btn btn-primary m-1">Save</button>
-            <button className="btn btn-primary m-1">Edit</button>
-            <button className="btn btn-primary m-1">Cancel</button>
-            
+      <div className="row">
+        <div className="col-9">
+          {/* <h3 className="text-center">Form</h3> */}
         </div>
-    </div>
-    <div className="row">
-      {formFieldList &&
-        formFieldList[0] &&
-        formFieldList.map((item, index) => (
-          <React.Fragment
-            key={`formFieldSchemaRender_main_${item.name}_${index}`}
-          >
-            {handleShowProductFieldSection(item, index)}
-            {handleShowProductFieldSubsection(item, index)}
-            <FormFieldSchemaRender
-              key={`formFieldSchemaRender${item.name}_${index}`}
-              index={index}
-              formItem={item}
-              formReadOnly={!isProdEditMode}
-              formValueObject={formValueObject}
-              formValidationObject={productFormValidation}
-              onBlur={(e) => handleBlurChange(e, item)}
-              onChange={handleInputChange}
-            />
-          </React.Fragment>
-        ))}
-    </div></>
+        <div className="col-3">
+          <button className="btn btn-primary m-1">Save</button>
+          <button className="btn btn-primary m-1">Edit</button>
+          <button className="btn btn-primary m-1">Cancel</button>
+        </div>
+      </div>
+      <div className="row">
+        {formFieldList &&
+          formFieldList[0] &&
+          formFieldList.map((item, index) => (
+            <React.Fragment
+              key={`formFieldSchemaRender_main_${item.name}_${index}`}
+            >
+              {handleShowProductFieldSection(item, index)}
+              {handleShowProductFieldSubsection(item, index)}
+              <FormFieldSchemaRender
+                key={`formFieldSchemaRender${item.name}_${index}`}
+                index={index}
+                formItem={item}
+                formReadOnly={!isProdEditMode}
+                formValueObject={formValueObject}
+                formValidationObject={productFormValidation}
+                onBlur={(e) => handleBlurChange(e, item)}
+                onChange={handleInputChange}
+              />
+            </React.Fragment>
+          ))}
+      </div>
+    </>
   );
 };
 
