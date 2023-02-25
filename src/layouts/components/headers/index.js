@@ -14,15 +14,13 @@ import { useTranslation } from "react-i18next";
 import Iconbutton from "./components/Iconbutton";
 import { MaterialUISwitch } from "./components/MaterialUISwitch";
 import { signOutAction } from "src/redux/slice/authSlice";
-import _ from 'lodash';
-
+import _ from "lodash";
 
 const Header = (props) => {
   const navigate = useNavigate();
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const themeObj = useThemeContext();
-  const authState = useSelector(state => state.auth)
-
+  const authState = useSelector((state) => state.auth);
 
   const [isDarkMode, changeMode] = useState(false);
   const [t, I18n] = useTranslation();
@@ -62,22 +60,17 @@ const Header = (props) => {
     I18n.changeLanguage(lnCode);
   };
 
-
   const SignOut = () => {
-    dispatch(signOutAction())
+    dispatch(signOutAction());
 
     // toast.success(
     //   "Sign-out successfully",
     //   "Information",
     //   2000
     // );
-    toast.success(t("nofn-msg-for-signout"),
-      "",
-      2000
-    );
-    // navigate("/login");
+    toast.success(t("nofn-msg-for-signout"), "", 2000);
+    navigate("/login");
   };
-
   return (
     <div
       style={{
@@ -108,8 +101,9 @@ const Header = (props) => {
             <li>
               <a
                 onClick={(e) => changeLanguage(e, "en")}
-                className={`dropdown-item ${I18n.language === "en" ? "active" : ""
-                  }`}
+                className={`dropdown-item ${
+                  I18n.language === "en" ? "active" : ""
+                }`}
                 href="#"
               >
                 English
@@ -118,8 +112,9 @@ const Header = (props) => {
             <li>
               <a
                 onClick={(e) => changeLanguage(e, "fi")}
-                className={`dropdown-item ${I18n.language === "fi" ? "active" : ""
-                  }`}
+                className={`dropdown-item ${
+                  I18n.language === "fi" ? "active" : ""
+                }`}
                 href="#"
               >
                 Finnish
@@ -184,9 +179,14 @@ const Header = (props) => {
               height="32"
               className="rounded-circle me-2"
             /> */}
-            <strong>{_.get(authState, "authUserInfo.jwtTokenDecode.email", "User")}</strong>
+            <strong>
+              {_.get(authState, "userFirebaseInfo.email", "User")}
+            </strong>
           </a>
-          <ul className="dropdown-menu headerLayout__userDropdown" aria-labelledby="dropdownUser1">
+          <ul
+            className="dropdown-menu headerLayout__userDropdown"
+            aria-labelledby="dropdownUser1"
+          >
             {/* <li>
               <a
                 className="dropdown-item"
@@ -200,11 +200,11 @@ const Header = (props) => {
               </a>
             </li> */}
 
-            <li>
-              <a className="dropdown-item" href="#/app/user/myprofile" >
+            {/* <li>
+              <a className="dropdown-item" href="#/app/user/myprofile">
                 Profile
               </a>
-            </li>
+            </li> */}
             <li>
               <a className="dropdown-item" onClick={() => SignOut()}>
                 Signout

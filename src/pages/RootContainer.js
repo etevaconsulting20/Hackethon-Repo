@@ -1,32 +1,33 @@
 import React, { useEffect } from "react";
-import { HashRouter, Navigate, Route, Routes, useLocation, } from "react-router-dom";
+import {
+  HashRouter,
+  Navigate,
+  Route,
+  Routes,
+  useLocation,
+} from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { ThemeContextProvider } from "../layouts/theme";
 import Login from "./auth";
 import MainApp from "./MainApp";
 // import { getAuthStatusAction } from "src/redux/slice/authSlice";
 import { getAuthStatusAction } from "src/redux/thunks/authThunk";
+import SignUp from "./auth/signup";
 // eslint-disable-next-line no-unused-vars
 
 const RootContainer = () => {
   const location = useLocation();
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-  const authState = useSelector((state) => state.auth)
+  const authState = useSelector((state) => state.auth);
 
   useEffect(() => {
-    dispatch(getAuthStatusAction())
+    dispatch(getAuthStatusAction());
   }, []);
 
-
   if (!authState.isAuthTokenChecked) {
-    return (
-      <>
-        
-      </>
-    )
+    return <></>;
   }
-
 
   return (
     <>
@@ -35,14 +36,15 @@ const RootContainer = () => {
           <Route
             path="app/*"
             element={
-              true ? <MainApp /> : <Navigate replace to="/login" />
+              authState.isAuth ? <MainApp /> : <Navigate replace to="/login" />
             }
           />
-          <Route path="/login" element={<MainApp />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
           <Route
             path="/"
             element={
-              true ? (
+              authState.isAuth ? (
                 <Navigate replace to="/app" />
               ) : (
                 <Navigate replace to="/login" />

@@ -20,48 +20,48 @@ export const getAxios = (specificBaseUrl) => {
   }
 
   // interceptors Request------------------------------------
-  instance.interceptors.request.use(
-    async (config) => {
-      const token = Cookies.get('jwtToken')
+  // instance.interceptors.request.use(
+  //   async (config) => {
+  //     const token = Cookies.get('jwtToken')
 
-      if (token) {
-        config.headers = {
-          ...config.headers,
-          // token: token,
-          authorization: `Bearer ${token}`,
-        };
-      }
-      return config;
-    },
-    async (error) => {
-      return new Promise((resolve, reject) => {
-        reject(error);
-      });
-    }
-  );
+  //     if (token) {
+  //       config.headers = {
+  //         ...config.headers,
+  //         // token: token,
+  //         authorization: `Bearer ${token}`,
+  //       };
+  //     }
+  //     return config;
+  //   },
+  //   async (error) => {
+  //     return new Promise((resolve, reject) => {
+  //       reject(error);
+  //     });
+  //   }
+  // );
 
-  //validating the token expiration scenario --------------------------
-  // interceptors Response------------------------------------
-  instance.interceptors.response.use(
-    async (Response) => {
-      return Response;
-    },
-    async (error) => {
-      if (error.response && error.response.status === 401) {
-        //dispatch action using store to show token expire popup-----
-        Cookies.remove("token")
-        // window.location.pathname = "#/login";
-        // window.location = "#/login";
-        return new Promise((resolve, reject) => {
-          reject(error);
-        });
-      } else {
-        return new Promise((resolve, reject) => {
-          reject(error);
-        });
-      }
-    }
-  );
+  // //validating the token expiration scenario --------------------------
+  // // interceptors Response------------------------------------
+  // instance.interceptors.response.use(
+  //   async (Response) => {
+  //     return Response;
+  //   },
+  //   async (error) => {
+  //     if (error.response && error.response.status === 401) {
+  //       //dispatch action using store to show token expire popup-----
+  //       Cookies.remove("token")
+  //       // window.location.pathname = "#/login";
+  //       // window.location = "#/login";
+  //       return new Promise((resolve, reject) => {
+  //         reject(error);
+  //       });
+  //     } else {
+  //       return new Promise((resolve, reject) => {
+  //         reject(error);
+  //       });
+  //     }
+  //   }
+  // );
 
   return instance;
 };
