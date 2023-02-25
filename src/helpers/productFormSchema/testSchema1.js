@@ -1,22 +1,5 @@
 export default [
-    {
-        name: "_2an",
-        label: "__2AN",
-        placeholder: "",
-        tooltipText: "_2AN",
-        parentTab: "General",
-        tabName: "Identifier_tab",
-        readOnly: true,
-        type: "text",
-        isMultilingual: false,
-        validationType: "string",
-        validations: [
-            {
-                type: "required",
-                params: ["This field is required"],
-            },
-        ],
-    },
+
     {
         name: "gtin",
         label: "_GTIN",
@@ -26,7 +9,6 @@ export default [
         tabName: "Identifier_tab",
         readOnly: true,
         type: "text",
-        isMultilingual: false,
         validationType: "string",
         validations: [
             {
@@ -47,7 +29,6 @@ export default [
         tabName: "Identifier_tab",
         readOnly: true,
         type: "businessIdentifiers",
-        isMultilingual: false,
         options: [],
         validationType: "",
         validations: [],
@@ -61,7 +42,6 @@ export default [
         tabName: "Identifier_tab",
         readOnly: true,
         type: "text",
-        isMultilingual: false,
         options: [],
         validationType: "",
         validations: [],
@@ -75,7 +55,6 @@ export default [
     //     tabName: "Identifier_tab",
     //     readOnly: false,
     //     type: "text",
-    //     isMultilingual: false,
     //     validationType: "string",
     //     validations: [
     //         {
@@ -93,7 +72,6 @@ export default [
         tabName: "Identifier_tab",
         readOnly: true,
         type: "text",
-        isMultilingual: false,
     },
     {
         name: "modifiedDate",
@@ -104,7 +82,6 @@ export default [
         tabName: "Identifier_tab",
         readOnly: true,
         type: "text",
-        isMultilingual: false,
     },
     {
         name: "profileActive",
@@ -115,7 +92,6 @@ export default [
         tabName: "Identifier_tab",
         readOnly: false,
         type: "switch",
-        isMultilingual: false,
     },
     {
         name: "productName",
@@ -126,7 +102,6 @@ export default [
         tabName: "Identifier_tab",
         readOnly: false,
         type: "text",
-        isMultilingual: true,
     },
     {
         name: "regulatedProductName",
@@ -137,7 +112,6 @@ export default [
         tabName: "Identifier_tab",
         readOnly: false,
         type: "text",
-        isMultilingual: true,
     },
     {
         name: "descriptionShort",
@@ -149,7 +123,6 @@ export default [
         readOnly: false,
         type: "text",
         aiEnable: true,
-        isMultilingual: true,
     },
     {
         name: "description",
@@ -161,7 +134,6 @@ export default [
         readOnly: false,
         type: "textarea",
         aiEnable: true,
-        isMultilingual: true,
     },
     {
         name: "externalSources",
@@ -173,7 +145,6 @@ export default [
         readOnly: false,
         type: "externalSources",
         aiEnable: false,
-        isMultilingual: false,
     },
     {
         parentTab: "General",
@@ -190,7 +161,6 @@ export default [
                 tabName: "Manufacturer_tab",
                 readOnly: false,
                 type: "text",
-                isMultilingual: false,
             },
             {
                 name: "businessId",
@@ -201,7 +171,6 @@ export default [
                 tabName: "Manufacturer_tab",
                 readOnly: false,
                 type: "text",
-                isMultilingual: false,
             },
             {
                 name: "contact",
@@ -212,7 +181,6 @@ export default [
                 tabName: "Manufacturer_tab",
                 readOnly: false,
                 type: "text",
-                isMultilingual: false,
             },
             {
                 name: "address",
@@ -223,7 +191,6 @@ export default [
                 tabName: "Manufacturer_tab",
                 readOnly: false,
                 type: "text",
-                isMultilingual: false,
             },
         ],
     },
@@ -236,7 +203,6 @@ export default [
         tabName: 'Manufacturer_tab',
         readOnly: false,
         type: "emailMultiAdd",
-        isMultilingual: false,
     },
     {
         name: "ecommerce",
@@ -253,7 +219,6 @@ export default [
         tabName: "Category_tab",
         readOnly: false,
         type: "restrictions",
-        isMultilingual: false,
     },
     {
         category: [
@@ -266,7 +231,6 @@ export default [
                 tabName: "Category_tab",
                 readOnly: false,
                 type: "select",
-                isMultilingual: true,
             },
             {
                 name: "familyCode.id",
@@ -278,7 +242,6 @@ export default [
                 tabName: "Category_tab",
                 readOnly: false,
                 type: "select",
-                isMultilingual: true,
             },
             {
                 name: "classCode.id",
@@ -290,7 +253,6 @@ export default [
                 tabName: "Category_tab",
                 readOnly: false,
                 type: "select",
-                isMultilingual: true,
             },
             {
                 name: "categoryCode.id",
@@ -302,7 +264,6 @@ export default [
                 tabName: "Category_tab",
                 readOnly: false,
                 type: "select",
-                isMultilingual: true,
             },
         ],
     },
@@ -315,7 +276,6 @@ export default [
         tabName: "Ingredients_tab",
         readOnly: false,
         type: "textarea",
-        isMultilingual: true,
     },
     {
         allergens: [
@@ -329,7 +289,6 @@ export default [
                 readOnly: false,
                 type: "multiSelectWithModal",
                 modalTitle: "Select Allergens Here",
-                isMultilingual: true,
                 validationType: "array",
             },
             {
@@ -342,7 +301,6 @@ export default [
                 readOnly: false,
                 type: "multiSelectWithModal",
                 modalTitle: "Select Allergens Here",
-                isMultilingual: true,
                 validationType: "array",
             },
             {
@@ -355,7 +313,6 @@ export default [
                 readOnly: false,
                 type: "multiSelectWithModal",
                 modalTitle: "Select Allergens Here",
-                isMultilingual: true,
                 validationType: "array",
             },
         ],
@@ -372,7 +329,6 @@ export default [
     //                 tabName: 'Allergens_tab',
     //                 readOnly: false,
     //                 type: 'multiSelectWithModal',
-    //                 isMultilingual: true,
     //                 validationType: 'array',
     //             },
     //             {
@@ -384,7 +340,6 @@ export default [
     //                 tabName: 'Allergens_tab',
     //                 readOnly: false,
     //                 type: 'multiSelectWithModal',
-    //                 isMultilingual: true,
     //                 validationType: 'array',
     //             },
     //             {
@@ -396,7 +351,6 @@ export default [
     //                 tabName: 'Allergens_tab',
     //                 readOnly: false,
     //                 type: 'multiSelectWithModal',
-    //                 isMultilingual: true,
     //                 validationType: 'array',
     //             },
     //         ]
@@ -413,7 +367,6 @@ export default [
                 tabName: "Additives_tab",
                 readOnly: false,
                 type: "textMultiAdd",
-                isMultilingual: false,
                 validationType: "array",
             },
             {
@@ -425,7 +378,6 @@ export default [
                 tabName: "Additives_tab",
                 readOnly: false,
                 type: "textMultiAdd",
-                isMultilingual: false,
                 validationType: "array",
             },
             {
@@ -437,7 +389,6 @@ export default [
                 tabName: "Additives_tab",
                 readOnly: false,
                 type: "textMultiAdd",
-                isMultilingual: false,
                 validationType: "array",
             },
         ],
@@ -574,7 +525,6 @@ export default [
                 readOnly: false,
                 tooltipText: "Website Url",
                 type: "text",
-                isMultilingual: false,
                 validationType: "string",
                 validations: [
                     {
@@ -591,7 +541,6 @@ export default [
                 readOnly: false,
                 tooltipText: "Overlay Url",
                 type: "text",
-                isMultilingual: false,
                 validationType: "string",
             },
             {
@@ -602,7 +551,6 @@ export default [
                 tabName: "Marketing_tab",
                 readOnly: false,
                 type: "text",
-                isMultilingual: false,
             },
             {
                 name: "publicTelephone",
@@ -612,7 +560,6 @@ export default [
                 tabName: "Marketing_tab",
                 readOnly: false,
                 type: "text",
-                isMultilingual: false,
             },
 
             {
@@ -623,7 +570,6 @@ export default [
                 placeholder: "Line 1",
                 readOnly: false,
                 type: "text",
-                isMultilingual: false,
             },
             {
                 name: "postalAddress[1]",
@@ -632,7 +578,6 @@ export default [
                 placeholder: "Line 2",
                 readOnly: false,
                 type: "text",
-                isMultilingual: false,
             },
             {
                 name: "postalAddress[2]",
@@ -641,7 +586,6 @@ export default [
                 placeholder: "Line 3",
                 readOnly: false,
                 type: "text",
-                isMultilingual: false,
             },
             {
                 name: "postalAddress[3]",
@@ -650,7 +594,6 @@ export default [
                 placeholder: "Line 4",
                 readOnly: false,
                 type: "text",
-                isMultilingual: false,
             },
 
             {
@@ -662,7 +605,6 @@ export default [
                 readOnly: false,
                 type: "textarea",
                 aiEnable: true,
-                isMultilingual: true,
             },
             {
                 name: "banner1",
@@ -672,7 +614,6 @@ export default [
                 tabName: "Marketing_tab",
                 readOnly: false,
                 type: "text",
-                isMultilingual: true,
             },
             {
                 name: "banner2",
@@ -682,7 +623,6 @@ export default [
                 readOnly: false,
                 tooltipText: "Lower Banner",
                 type: "text",
-                isMultilingual: true,
             },
             {
                 name: "usageInstructions",
@@ -692,7 +632,6 @@ export default [
                 tabName: "Marketing_tab",
                 readOnly: false,
                 type: "textarea",
-                isMultilingual: true,
             },
 
             {
@@ -703,7 +642,6 @@ export default [
                 tabName: "Marketing_tab",
                 readOnly: false,
                 type: "urlMultiAdd",
-                isMultilingual: false,
             },
             {
                 name: "socialMediaUrls",
@@ -718,7 +656,6 @@ export default [
                     { value: "Instagram", label: "Instagram" },
                     { value: "Twitter", label: "Twitter" },
                 ],
-                isMultilingual: false,
             },
             {
                 name: "externalLinks",
@@ -727,7 +664,6 @@ export default [
                 tabName: "Marketing_tab",
                 readOnly: false,
                 type: "urlMultiAdd",
-                isMultilingual: false,
             },
         ],
     },
@@ -743,7 +679,6 @@ export default [
             { label: "UTZ", value: "utz" },
             { label: "Rainforest Alliance", value: "rainforestalliance" },
         ],
-        isMultilingual: false,
     },
 
     {
@@ -759,7 +694,6 @@ export default [
                 readOnly: false,
                 type: "text",
                 validation: "",
-                isMultilingual: false,
             },
             {
                 name: "dateOfCalculation",
@@ -771,7 +705,6 @@ export default [
                 readOnly: false,
                 type: "text",
                 validation: "",
-                isMultilingual: false,
             },
             {
                 name: "source",
@@ -783,7 +716,6 @@ export default [
                 readOnly: false,
                 type: "text",
                 validation: "",
-                isMultilingual: false,
             },
             {
                 name: "externalReference",
@@ -795,7 +727,6 @@ export default [
                 readOnly: false,
                 type: "text",
                 validation: "",
-                isMultilingual: false,
             },
         ],
     },
@@ -812,7 +743,6 @@ export default [
                 sectionTooltipText: "Custom Header",
                 readOnly: false,
                 type: "color",
-                isMultilingual: false,
             },
             {
                 name: "headerText",
@@ -823,7 +753,6 @@ export default [
                 section: "Custom header",
                 readOnly: false,
                 type: "text",
-                isMultilingual: false,
             },
         ],
     },
@@ -836,7 +765,6 @@ export default [
         tabName: "Marketing_tab",
         readOnly: false,
         type: "emailConsent",
-        isMultilingual: false,
     },
 
     {
@@ -850,7 +778,6 @@ export default [
                 type: "select",
                 showTooltip: true,
                 readOnly: false,
-                isMultilingual: false,
                 options: [
                     {
                         value: "sell",
@@ -890,7 +817,6 @@ export default [
                 placeholder: "",
                 showTooltip: true,
                 readOnly: false,
-                isMultilingual: false,
                 validationType: "string",
                 validations: [],
             },
@@ -903,7 +829,6 @@ export default [
                 type: "text",
                 showTooltip: true,
                 readOnly: false,
-                isMultilingual: false,
                 validationType: "string",
                 validations: [],
             },
@@ -916,7 +841,6 @@ export default [
                 type: "text",
                 showTooltip: true,
                 readOnly: false,
-                isMultilingual: false,
                 validationType: "string",
                 validations: [],
             },
@@ -929,7 +853,6 @@ export default [
                 type: "select",
                 showTooltip: true,
                 readOnly: false,
-                isMultilingual: false,
                 options: [
                     {
                         value: "postal",
@@ -960,7 +883,6 @@ export default [
                 tabName: "Nutritional_tab",
                 readOnly: false,
                 type: "multiSelectWithModal",
-                isMultilingual: true,
             },
             {
                 name: "perQuantity",
@@ -970,7 +892,6 @@ export default [
                 tabName: "Nutritional_tab",
                 readOnly: false,
                 type: "text",
-                isMultilingual: false,
             },
             {
                 name: "calculatedFor",
@@ -980,7 +901,6 @@ export default [
                 tabName: "Nutritional_tab",
                 readOnly: false,
                 type: "select",
-                isMultilingual: false,
                 options: [
                     { label: "", value: "" },
                     { label: "PREPARED", value: "PREPARED" },
@@ -995,7 +915,6 @@ export default [
                 tabName: "Nutritional_tab",
                 readOnly: false,
                 type: "nutritionalDetails",
-                isMultilingual: false,
             },
         ],
     },
@@ -1008,7 +927,6 @@ export default [
         tabName: "UPIDS Product_tab",
         readOnly: false,
         type: "upidsProduct",
-        isMultilingual: false,
     },
 
     {
@@ -1019,7 +937,6 @@ export default [
         tabName: "Feedbacks_tab",
         readOnly: false,
         type: "feedback",
-        isMultilingual: false,
     },
 
     {
@@ -1030,6 +947,5 @@ export default [
         tabName: "Versioning_tab",
         readOnly: false,
         type: "versioning",
-        isMultilingual: false,
     },
 ];

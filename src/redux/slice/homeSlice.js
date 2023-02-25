@@ -7,6 +7,8 @@ const initialState = {
   newsFeedList: [],
   data: [],
 
+  formObject: {},
+
   selectedProductSchema: {
     // formType: '', // add/update
     productSchemaType: "",

@@ -52,8 +52,7 @@ export function InputTextWithLabel(props) {
 
 
     const dispatch = useDispatch()
-    const { aiTranslations } = useSelector(state => state)
-    const { isLoading } = aiTranslations
+
 
     const [showAiDataModal, setShowAiDataModal] = useState(false)
     const [modalData, setModalData] = useState({

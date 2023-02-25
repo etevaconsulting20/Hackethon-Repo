@@ -13,8 +13,8 @@ import { InputSwitchWithLable } from 'src/components/inputComponents/InputSwitch
 import { InputDateTimePicker } from 'src/components/inputComponents/InputDateTimePicker';
 import { InputTextMultiAddWithLabel } from 'src/components/inputComponents/InputTextMultiAddWithLabel';
 import { InputMultiSelectWithModal } from 'src/components/inputComponents/InputMultiSelectWithModal';
-import { InputEmailMultiAddWithModal } from 'src/components/inputComponents/InputEmailMultiAddWithModal';
-import { InputUrlMultiAddWithModal } from 'src/components/inputComponents/InputUrlMultiAddWithModal';
+// import { InputEmailMultiAddWithModal } from 'src/components/inputComponents/InputEmailMultiAddWithModal';
+// import { InputUrlMultiAddWithModal } from 'src/components/inputComponents/InputUrlMultiAddWithModal';
 // import { MediaImage } from 'src/components/inputComponents/MediaImage';
 // import { MediaImageOther } from 'src/components/inputComponents/MediaImageOther';
 // import { MediaVideo } from 'src/components/inputComponents/MediaVideo';
@@ -332,60 +332,60 @@ const FormFieldSchemaRender = (props) => {
     }
 
     
-    if (newFormItem.type === "emailMultiAdd") {
-        return (
-            <>
-                <InputEmailMultiAddWithModal
-                    key={`${newFormItem.nameUpdated}_${newFormItem.type}`}
-                    section={newFormItem.section}
-                    label={t(newFormItem.label)}
-                    placeholder={t(newFormItem.placeholder)}
-                    tooltipText={t(newFormItem.tooltipText)}
-                    type={newFormItem.type}
-                    name={newFormItem.nameUpdated}
-                    value={_.get(formValueObject, newFormItem.nameUpdated, "")}
-                    modalTitle={newFormItem.modalTitle}
-                    readOnly={newFormItem.readOnly || formReadOnly}
-                    isAllTouched={formValidationObject.isAllTouched}
-                    touched={formValidationObject.touched[newFormItem.nameUpdated]}
-                    errorMessage={_.get(formValidationObject, `errorMessage.${newFormItem.nameUpdated}`, "")}
-                    onBlur={onBlur}
-                    onChange={onChange}
-                    className={className}
-                    isSmallScreen={isSmallScreen}
-                />
-            </>
-        )
-    }
+    // if (newFormItem.type === "emailMultiAdd") {
+    //     return (
+    //         <>
+    //             <InputEmailMultiAddWithModal
+    //                 key={`${newFormItem.nameUpdated}_${newFormItem.type}`}
+    //                 section={newFormItem.section}
+    //                 label={t(newFormItem.label)}
+    //                 placeholder={t(newFormItem.placeholder)}
+    //                 tooltipText={t(newFormItem.tooltipText)}
+    //                 type={newFormItem.type}
+    //                 name={newFormItem.nameUpdated}
+    //                 value={_.get(formValueObject, newFormItem.nameUpdated, "")}
+    //                 modalTitle={newFormItem.modalTitle}
+    //                 readOnly={newFormItem.readOnly || formReadOnly}
+    //                 isAllTouched={formValidationObject.isAllTouched}
+    //                 touched={formValidationObject.touched[newFormItem.nameUpdated]}
+    //                 errorMessage={_.get(formValidationObject, `errorMessage.${newFormItem.nameUpdated}`, "")}
+    //                 onBlur={onBlur}
+    //                 onChange={onChange}
+    //                 className={className}
+    //                 isSmallScreen={isSmallScreen}
+    //             />
+    //         </>
+    //     )
+    // }
 
-    if (newFormItem.type === "urlMultiAdd") {
-        return (
-            <>
-                <InputUrlMultiAddWithModal
-                    key={`${newFormItem.nameUpdated}_${newFormItem.type}`}
-                    section={newFormItem.section}
-                    label={t(newFormItem.label)}
-                    placeholder={t(newFormItem.placeholder)}
-                    tooltipText={t(newFormItem.tooltipText)}
-                    type={newFormItem.type}
-                    name={newFormItem.nameUpdated}
-                    value={_.get(formValueObject, newFormItem.nameUpdated, "")}
-                    options={newFormItem.options}
-                    modalTitle={newFormItem.modalTitle}
-                    isMultilingual={newFormItem.isMultilingual}
-                    formLanguage={selectedFormLanguage}
-                    readOnly={newFormItem.readOnly || formReadOnly}
-                    isAllTouched={formValidationObject.isAllTouched}
-                    touched={formValidationObject.touched[newFormItem.nameUpdated]}
-                    errorMessage={_.get(formValidationObject, `errorMessage.${newFormItem.nameUpdated}`, "")}
-                    onBlur={onBlur}
-                    onChange={onChange}
-                    className={className}
-                    isSmallScreen={isSmallScreen}
-                />
-            </>
-        )
-    }
+    // if (newFormItem.type === "urlMultiAdd") {
+    //     return (
+    //         <>
+    //             <InputUrlMultiAddWithModal
+    //                 key={`${newFormItem.nameUpdated}_${newFormItem.type}`}
+    //                 section={newFormItem.section}
+    //                 label={t(newFormItem.label)}
+    //                 placeholder={t(newFormItem.placeholder)}
+    //                 tooltipText={t(newFormItem.tooltipText)}
+    //                 type={newFormItem.type}
+    //                 name={newFormItem.nameUpdated}
+    //                 value={_.get(formValueObject, newFormItem.nameUpdated, "")}
+    //                 options={newFormItem.options}
+    //                 modalTitle={newFormItem.modalTitle}
+    //                 isMultilingual={newFormItem.isMultilingual}
+    //                 formLanguage={selectedFormLanguage}
+    //                 readOnly={newFormItem.readOnly || formReadOnly}
+    //                 isAllTouched={formValidationObject.isAllTouched}
+    //                 touched={formValidationObject.touched[newFormItem.nameUpdated]}
+    //                 errorMessage={_.get(formValidationObject, `errorMessage.${newFormItem.nameUpdated}`, "")}
+    //                 onBlur={onBlur}
+    //                 onChange={onChange}
+    //                 className={className}
+    //                 isSmallScreen={isSmallScreen}
+    //             />
+    //         </>
+    //     )
+    // }
 
 
     if (newFormItem.type === "multiSelectWithModal") {
