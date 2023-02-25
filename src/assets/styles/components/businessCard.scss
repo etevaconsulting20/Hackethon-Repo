@@ -1,0 +1,29 @@
+.stBusinessCard {
+    border: 1px solid #c8d6e0;
+    border-radius: .4375rem; 
+    position: relative;
+    height: 40;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__element {
+        font-weight: 400;
+        font-size: 14px;
+        color: #000;
+
+        &__businessLable {
+            background-color: #f5d4da;
+            padding: 10;
+            border-radius: 5px 0px 0px 5px;
+        }
+    }
+
+    &__delete {
+        color: #6489a0;
+        font-size: 12px;
+        font-weight: 400;
+        cursor: pointer;
+        padding: 20
+    }
+}

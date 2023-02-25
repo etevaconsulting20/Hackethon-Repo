@@ -1,0 +1,19 @@
+.buttonSquare {
+    min-width: 180px;
+    height: 40px;
+    font-size: 14px;
+
+    text-align: center;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: none;
+    background-color: #cf2948;
+    border: "1px solid #007bff";
+    // border: disabled ? "1px solid #007bff" : "none",
+
+    &__spinner {
+        width: 2rem;
+        height: 2rem;
+    }
+}

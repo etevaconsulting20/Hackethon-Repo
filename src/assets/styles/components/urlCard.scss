@@ -1,0 +1,38 @@
+.urlCard {
+    padding: .625rem;
+    border: 1px solid #c8d6e0;
+    border-radius: .4375rem;
+    cursor: pointer;
+    position: relative;
+
+    span {
+        font-weight: 400;
+        font-size: 14px;
+        color: #000;
+    }
+
+    &__urlWrapper {
+        color: #96a5af;
+        font-size: 12px;
+        overflow-y: hidden;
+        overflow-x: auto
+    }
+
+    &__edit {
+        position: absolute;
+        top: 10px;
+        right: 80px;
+        color: #6489a0;
+        font-size: 12px;
+        font-weight: 400;
+    }
+
+    &__delete {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        color: #6489a0;
+        font-size: 12px;
+        font-weight: 400;
+    }
+}

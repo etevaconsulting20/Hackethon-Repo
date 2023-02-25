@@ -1,0 +1,34 @@
+
+  .loadingSpinner {
+    height: 100vh; //vh - viewport height
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: -100px;
+    .image {
+      vertical-align: middle;
+      -webkit-animation: none;
+    }
+    .box {
+      vertical-align: middle;
+    }
+
+    &__wrapper {
+        width: 7.5rem;
+        height: 7.5rem;
+    }
+
+    &__loader {
+        height: 3rem;
+        width: 3rem;
+        margin-top: -5rem;
+    }
+  }
+
+  
+  .margin-loader {
+    margin-left: 400px;
+  }
+
+

@@ -1,0 +1,37 @@
+.eComCard {
+    padding: .625rem;
+    border: 1px solid #c8d6e0;
+    border-radius: .4375rem;
+    position: relative;
+
+    &__url {
+        font-weight: 400;
+        font-size: 14px;
+        color: #000
+    }
+
+    &__cardData {
+        color: #96a5af;
+        font-size: 12px;
+    }
+
+    &__isEdit {
+        position: absolute;
+        top: 15px;
+        right: 80px;
+        color: #6489a0;
+        font-size: 12px;
+        font-weight: 400;
+        cursor: pointer;
+    }
+
+    &__isDelete {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        color: #6489a0;
+        font-size: 12px;
+        font-weight: 400;
+        cursor: pointer;
+    }
+}

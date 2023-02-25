@@ -1,0 +1,520 @@
+$primary: #cf2948;
+$light: white;
+@import "bootstrap/scss/bootstrap.scss";
+
+body {
+  background: #fff;
+  font-size: small;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.cnav-item {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navbar-active-parent {
+  background-color: white;
+  color: $primary;
+  transition: all 0.5s;
+}
+
+.layout-container-bottom-tab .main-app-container {
+  margin-left: 0px;
+}
+
+.layout-container-bottom-tab {
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+
+.customBottomTabs {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+
+  height: 80px;
+}
+
+.custom-bottom-tabs-div {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.custom-bottom-tabs-div i {
+  font-size: 18px;
+}
+
+.custom-bottom-tabs-div div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  cursor: pointer;
+  height: 100%;
+}
+
+.custom-bottom-tabs-div a {
+  padding: 0px;
+}
+
+.customAppBar {
+  // position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.customAppBar .dropstart .dropdown-toggle::before {
+  display: none !important;
+}
+
+.sidebar {
+  width: 250px;
+  transition: all ease-in-out 500ms;
+  // margin-right: 15px;
+}
+
+.sidebar.sb-active {
+  margin-left: -250px;
+}
+
+.layout-container {
+  display: flex;
+  align-items: stretch;
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+
+.layout-container-nav-bar {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+}
+
+// #dropdownMenuButton1::after{
+// display: none;
+// }
+.nav-pills .dropdown-navlink.active {
+  background-color: transparent !important;
+}
+
+.text-dark.nav-link.active {
+  color: white !important;
+}
+
+.navbar-collapse .text-dark.nav-link.active {
+  color: $primary  !important;
+}
+
+ol,
+ul {
+  padding-left: 1rem;
+}
+
+.nav-pills .nav-link.active.text-dark {
+  background-color: $primary;
+  color: white !important;
+}
+
+.text-dark.nav-link.dropdown-navlink.active {
+  color: $dark  !important;
+}
+
+.c-none-list-style {
+  list-style-type: none;
+}
+
+.bg-light .btn.bg-transparent {
+  color: $dark;
+}
+
+.bg-dark .btn.bg-transparent {
+  color: $white;
+}
+
+.main-app-container {
+  width: auto;
+  // margin-left: -30px;
+  // background-color: grey;
+}
+
+.main-page-container {
+  margin: 0px -12px;
+  padding-bottom: 5rem;
+  height: calc(100vh - 16px);
+}
+
+.navbar.navbar-expand-md .nav-link.active {
+  color: $primary  !important;
+}
+
+.btn-box-shadow-none {
+  box-shadow: none;
+}
+
+.navbar-toggler:focus {
+  text-decoration: none;
+  outline: 0;
+  box-shadow: none;
+}
+
+@media screen and (max-width: 600px) {
+  .sidebar {
+    width: 250px;
+    transition: all ease-in-out 500ms;
+    margin-left: -250px;
+  }
+
+  .sidebar.sb-active {
+    margin-left: 0px;
+  }
+}
+
+// .nav-link:active{
+//     background: red;
+// }
+
+.intro-section {
+  // background-image: url(https://www.smartpipe.fi/wp-content/uploads/2020/09/SmartPipe_putkistonhoitoa_ekologisesti_aerial.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 75px 95px;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  color: #ffffff;
+}
+
+@media (max-width: 991px) {
+  .intro-section {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
+@media (max-width: 767px) {
+  .intro-section {
+    padding: 28px;
+  }
+}
+
+@media (max-width: 575px) {
+  .intro-section {
+    min-height: auto;
+  }
+}
+
+.brand-wrapper .logo {
+  height: 35px;
+}
+
+@media (max-width: 767px) {
+  .brand-wrapper {
+    margin-bottom: 35px;
+  }
+}
+
+.intro-content-wrapper {
+  width: 410px;
+  max-width: 100%;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.intro-content-wrapper .intro-title {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 17px;
+}
+
+.intro-content-wrapper .intro-text {
+  font-size: 19px;
+  line-height: 1.37;
+}
+
+.intro-content-wrapper .btn-read-more {
+  background-color: #fff;
+  padding: 13px 30px;
+  border-radius: 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+}
+
+.intro-content-wrapper .btn-read-more:hover {
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+@media (max-width: 767px) {
+  .intro-section-footer {
+    margin-top: 35px;
+  }
+}
+
+.intro-section-footer .footer-nav a {
+  font-size: 20px;
+  font-weight: bold;
+  color: inherit;
+}
+
+@media (max-width: 767px) {
+  .intro-section-footer .footer-nav a {
+    font-size: 14px;
+  }
+}
+
+.intro-section-footer .footer-nav a+a {
+  margin-left: 30px;
+}
+
+.form-section {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+
+/* @media (max-width: 767px) {
+  .form-section {
+    padding: 35px;
+  }
+} */
+
+
+.scroll-with-tabs {
+  height: calc(100vh - 160px);
+  overflow-y: scroll;
+}
+
+.scroll-without-tabs {
+  height: calc(100vh - 115px);
+  overflow-y: scroll;
+}
+
+.scroll-with-tabs-and-button {
+  height: calc(100vh - 220px);
+  overflow-y: scroll;
+}
+
+.errorMsg {
+  font-weight: bold;
+  color: red;
+}
+
+.smartpipe_form[data-disabled="true"] {
+  pointer-events: none;
+}
+
+.border-right {
+  border-right: 1px solid #ced4da;
+}
+
+
+.common-button {
+  border-radius: 10px !important;
+  color: white;
+  font-size: 14px !important;
+  font-family: Verdana !important;
+}
+
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root {
+  text-transform: capitalize !important;
+}
+
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected {
+  color: #00bef0 !important;
+}
+
+.css-1aquho2-MuiTabs-indicator {
+  background-color: #00bef0 !important;
+}
+
+.css-e784if-MuiTypography-root {
+  font-size: 14px !important;
+  font-family: Verdana !important;
+}
+
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root {
+  font-size: 14px !important;
+  font-family: Verdana !important;
+}
+
+// .loading {
+//   background-color: rgba(0, 0, 0, 0.148);
+// }
+
+.skeleton-loader:empty {
+  width: 100%;
+  height: 15px;
+  display: block;
+  background: linear-gradient(to right,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.5) 50%,
+      rgba(255, 255, 255, 0) 80%),
+    lightgray;
+  background-repeat: repeat-y;
+  background-size: 50px 500px;
+  background-position: 0 0;
+  animation: shine 1s infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position: 100% 0;
+  }
+}
+
+.dropdown-item {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 0px !important;
+  height: 32px !important;
+}
+
+.css-j204z7-MuiFormControlLabel-root {
+  margin: 0px !important;
+}
+
+.themeSwitch {
+  .MuiSwitch-thumb {
+    width: 24px !important;
+    height: 24px !important;
+    margin-top: 4px !important;
+  }
+
+  .MuiSwitch-track {
+    width: 40px !important;
+  }
+}
+
+
+// coustomer group tab css
+.groupAccordion {
+
+  .accordion-button {
+    background-color: #00bef0 !important;
+    border-radius: 10px !important;
+    display: flex;
+    height: 40px;
+    outline: none;
+    box-shadow: none;
+  }
+
+  .btn-success {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  .accordion-header {
+    border-radius: 10px !important;
+  }
+
+  .accordion-item {
+    border-radius: 10px !important;
+  }
+
+
+  .accordion-button:not(.collapsed) {
+    color: black;
+  }
+
+  .accordion-button:not(.collapsed)::after {
+    background-image: var(--bs-accordion-btn-icon) !important;
+  }
+
+  .test_toggle {
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+  }
+
+  .test_input {
+    z-index: 2;
+    position: absolute;
+  }
+
+  .groupAccordion__input {
+    padding-left: 6px;
+  }
+
+  // &__input[data-disabled="true"] {
+  //   background-color: transparent;
+  //   color: white;
+  //   border: none;
+  // }
+  // &__input[data-disabled="false"] {
+  //   background-color: transparent;
+  //   color: white;
+  //   border: none;
+  // }
+}
+
+.floating-button {
+  position: fixed;
+  bottom: 10px;
+  right: 21px;
+  z-index: 5px;
+}
+
+.common-text {
+  font-size: 14px !important;
+  font-family: Verdana !important;
+  text-transform: inherit !important;
+}
+.delete-device-icon{
+  cursor: pointer;
+}
+
+.css-1gsv261 {
+  padding-left: 5px;
+}
+.table-height{
+  height: 519px;
+}
+.device-card-image{
+  width: 160px;
+  height: 150px;
+  border-radius: 10px;
+}
+.device-card-submenu-title{
+  color:dimgray;
+  margin-left: 10px;
+}
+.device-card-submenu-value{
+  color:black;
+  margin-right: 10px;
+}

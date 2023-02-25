@@ -1,0 +1,23 @@
+.stProductCard {
+    // height: height ? height: auto";
+    //     width: width ? width: "auto",
+    width: auto;
+    margin-bottom: 16px;
+    cursor: pointer;
+
+    &__cardText {
+        cursor: pointer;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        color: rgb(108, 117, 125);
+
+        &__aiFillStart {
+            color: rgb(252, 186, 3);
+            height: 1em;
+            width: 1em;
+            font-size: 18;
+            font-weight: 20;
+        }
+    }
+}

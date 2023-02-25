@@ -1,0 +1,22 @@
+.stAddbutton {
+
+
+    &__icon {
+        margin-top: 0px;
+        margin-right: 0.3125rem;
+        align-self: center;
+        cursor: pointer;
+        // color: rgb(150, 165, 175);
+        color: rgb(108, 117, 125);
+    }
+
+    &__button {
+        padding: 0;
+        background: none;
+        border: none;
+        // color: rgb(150, 165, 175);
+        color: rgb(100, 137, 160);
+        font-size: 12px;
+        font-weight: normal;
+    }
+}

@@ -1,0 +1,46 @@
+.stAccordion {
+    margin: 10px;
+
+    &__card {
+        margin: 5px;
+        // margin-top: 16px;
+        // height: auto;
+        // width: 48%;
+        border-radius: 15px;
+        opacity: 1px;
+        background-color: #ffffff;
+        padding: 10px 18px 7px 18px;
+        border-style: solid;
+        border-width: 1.5px;
+        border-color: #DFEDF5;
+
+
+        &__toggle {
+            height: 40px;
+            justify-content: center;
+            padding: 5;
+            background-color: #ffffff;
+            cursor: pointer;
+            border: none;
+
+            &__title {
+                font-weight: 700;
+            }
+
+            &__content {
+                position: absolute;
+                right: 0px;
+            }
+        }
+
+
+        &__collapse {
+            display: inline-block;
+            font-size: 14px;
+            font-weight: normal;
+            color: #6489A0;
+            margin-left: 5px;
+        }
+    }
+
+}

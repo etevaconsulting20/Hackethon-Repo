@@ -1,0 +1,46 @@
+.stInputField__username {
+    background-color: #F8FCFD;
+    border-radius: 7px;
+    // border: readOnly ? none: 1px solid #c5cfd6;
+    height: 40px;
+    font-size: 12px;
+    padding: 16px;
+    width: 100%;
+    color: #253C4B;
+    outline: none;
+}
+
+.stInputField__password {
+    position: relative;
+
+    &__input {
+        padding: 16px;
+        width: 100%;
+        height: 40px;
+        border-radius: 7px;
+        // border: readOnly ? none: 1px solid #c5cfd6;
+        // fontFamily;
+        background-color: #F8FCFD;
+        color: #253C4B;
+        outline: none;
+        font-size: 12px;
+    }
+
+    span {
+        position: absolute;
+        right: 20px;
+        top: 10px;
+        color: rgb(69, 92, 108);
+    }
+}
+
+.stInputField__basic {
+    background-color: #F8FCFD;
+    border-radius: 7px;
+    height: 40px;
+    font-size: 12px;
+    padding: 16px;
+    width: 100%;
+    color: #253C4B;
+    outline: none;
+}

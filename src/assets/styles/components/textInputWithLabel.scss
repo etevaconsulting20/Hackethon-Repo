@@ -1,0 +1,25 @@
+.textInputWithLabel {
+    &__section {
+        max-width: 100%;
+        display: flex;
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            color: #6489a0;
+            text-transform: uppercase;
+        }
+
+        &__popup {
+            margin-bottom: 2;
+            color: #6c757d;
+            cursor: pointer;
+            margin-left: 5;
+            margin-top: 5;
+        }
+    }
+}
+
+.text-danger {
+    text-align: end;
+}

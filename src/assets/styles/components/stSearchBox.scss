@@ -1,0 +1,33 @@
+.stSearchBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    &__input {
+        // width: width ? width : "auto",
+        margin-left: 15px;
+        height: 48px;
+        outline: none;
+        border: 0;
+        background-color: #fff;
+        align-self: center;
+        border-radius: 12px;
+        padding-left: 24px;
+        font-size: 16px;
+        font-family: Lato, Helvetica Neue, Arial, Helvetica, sans-serif,
+    }
+
+    &__searchIcon {
+        opacity: 0.5;
+        cursor: pointer;
+        position: absolute;
+        right: 5;
+    }
+
+    &__linkIcon {
+        cursor: pointer;
+        position: absolute;
+        right: 5;
+    }
+}

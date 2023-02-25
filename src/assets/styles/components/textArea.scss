@@ -1,0 +1,22 @@
+.textAreaWithLabel {
+    &__lable {
+        flex: 0 0 50%;
+        max-width: 50%;
+        display: flex;
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            color: #6489a0;
+            text-transform: uppercase;
+        }
+
+        &__popup {
+            margin-bottom: 2;
+            color: #6c757d;
+            cursor: pointer;
+            margin-left: 5;
+            margin-top: 5;
+        }
+    }
+}

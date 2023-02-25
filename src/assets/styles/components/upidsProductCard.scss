@@ -1,0 +1,23 @@
+.upids-product-card {
+    height: auto;
+    width: auto;
+    // height: height ? height : "auto",
+    // width: width ? width : "auto",
+    margin-bottom: 16px;
+    cursor: pointer;
+    background-color: #eff8fd;
+    opacity: 1;
+    padding: 1px;
+
+
+    &__cardText {
+        padding: 10px;
+        color: #354052;
+    }
+
+    &__cardText2 {
+        padding: 10px;
+        font-size: 12px;
+        color: #354052;
+    }
+}

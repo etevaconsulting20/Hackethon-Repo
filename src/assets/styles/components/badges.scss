@@ -1,0 +1,33 @@
+.stBadges {
+    font-size: .85714286rem;
+    align-self: center;
+    color: #00000099;
+
+    &__icon {
+        margin-left: 0.5rem;
+        margin-right: 0;
+        font-size: .92857143em;
+        opacity: .5;
+        cursor: pointer;
+        transition: ease;
+        color: #00000099;
+    }
+
+
+}
+
+.stBadgesAdd {
+
+    color: #23333e;
+    font-size: 12px;
+    font-weight: medium;
+    align-self: center;
+    cursor: pointer;
+
+    &__ioAddCircleOutline {
+        margin-top: 0px;
+        margin-right: 0.3125rem;
+        align-self: center;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,12 @@
+[
+    {
+        "relation": ["delegate_permission/common.handle_all_urls"],
+        "target" : { "namespace": "android_app", "package_name": "io.upids.satelliteflutter",
+                     "sha256_cert_fingerprints": ["30:71:81:B8:80:26:E1:DB:B0:B1:FC:D0:5C:97:91:DE:E5:F4:1C:9A:77:4E:AD:6A:D4:5B:51:42:01:A9:AE:D7"] }
+    },
+    {
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target" : { "namespace": "android_app", "package_name": "io.upids.satelliteflutter",
+                   "sha256_cert_fingerprints": ["2A:33:3B:83:A5:6D:0B:1D:D6:50:C0:98:0B:D7:52:30:A8:D4:8F:D0:4A:96:3C:D6:87:CD:D0:B1:5F:46:10:3D"] }
+    }
+]

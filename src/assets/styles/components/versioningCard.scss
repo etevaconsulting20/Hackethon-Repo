@@ -1,0 +1,21 @@
+.versioningCard {
+    background-color: #f8f9fa;
+    border-top: 1 px solid #dee2e6;
+    color: #212529;
+    width: 180px;
+
+    &__compareButton {
+        background-color: #007bff;
+        border-color: #007bff;
+        margin: 10;
+        font-size: .875rem;
+        font-weight: 700;
+    }
+
+    &__restore {
+        background-color: #dc3545;
+            border-color: #dc3545;
+            font-size: .875rem;
+            font-weight: 700;
+    }
+}
