@@ -44,21 +44,113 @@ export const getProductTemplateSchemaAction = createAsyncThunk(
 );
 
 
+
+const dummyData = [
+  {
+      id: "1",
+      firstName: "Bharat",
+      lastName: "Sonwane",
+      gender: "male"
+  },
+  {
+      id: "2",
+      firstName: "Kavita",
+      lastName: "Savant",
+      gender: "Female"
+  },
+  {
+      id: "3",
+      firstName: "Kunal",
+      lastName: "Kamat",
+      gender: "Male"
+  },
+]
+
+
+export const getAllDataAction = createAsyncThunk(
+  "product/getAllDataAction",
+  async (arg, thunkApi) => {
+    try {
+
+
+      // const response = await getAxios().get(
+      //   `services/product/template/filter/use?name=${productType}`
+      // );
+      const response = {
+        data: dummyData
+      }
+      return response.data
+    } catch (err) {
+      return thunkApi.rejectWithValue(err);
+    }
+  }
+);
+
 export const getSpecificIdInfoAction = createAsyncThunk(
   "product/getSpecificIdInfoAction",
   async (arg, thunkApi) => {
     try {
 
-      
+
       // const response = await getAxios().get(
-        //   `services/product/template/filter/use?name=${productType}`
-        // );
+      //   `services/product/template/filter/use?name=${productType}`
+      // );
       const response = {
         data: {
-            
-          }
+
         }
-        return response.data
+      }
+      return response.data
+    } catch (err) {
+      return thunkApi.rejectWithValue(err);
+    }
+  }
+);
+
+
+
+
+export const addSpecificFormDataInfoAction = createAsyncThunk(
+  "product/addSpecificFormDataInfoAction",
+  async (arg, thunkApi) => {
+    try {
+
+
+      // const response = await getAxios().get(
+      //   `services/product/template/filter/use?name=${productType}`
+      // );
+      const response = {
+        data: {
+
+        }
+      }
+      await thunkApi.dispatch(getAllDataAction())
+      return response.data
+    } catch (err) {
+      return thunkApi.rejectWithValue(err);
+    }
+  }
+);
+
+
+
+export const removeSpecificFormDataInfoAction = createAsyncThunk(
+  "product/removeSpecificFormDataInfoAction",
+  async (arg, thunkApi) => {
+    try {
+      // const { id } = arg
+
+
+      // const response = await getAxios().get(
+      //   `services/product/template/filter/use?name=${productType}`
+      // );
+      const response = {
+        data: {
+
+        }
+      }
+      // await thunkApi.dispatch(getAllDataAction())
+      return response.data
     } catch (err) {
       return thunkApi.rejectWithValue(err);
     }

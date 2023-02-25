@@ -1,12 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 import _ from "lodash";
-import { getNewsfeedAction, getProductTemplateSchemaAction, getSpecificIdInfoAction } from "../thunks/homeThunk";
+import { getNewsfeedAction, getProductTemplateSchemaAction, getSpecificIdInfoAction, getAllDataAction } from "../thunks/homeThunk";
 
 const initialState = {
   isLoading: false,
   newsFeedList: [],
   data: [],
 
+  formListData: [],
   formObject: {},
   isFormEditMode: false,
   productFormValidation: {
@@ -38,9 +39,25 @@ const homeSlice = createSlice({
   initialState,
   reducers: {
 
+    formSaveValidationAction: (state, action) => {
+      const { errorMessageObject, isAllTouched, errorFieldList } = action.payload;
+      _.set(state.productFormValidation, `errorMessage`, errorMessageObject);
+      _.set(state.productFormValidation, `isAllTouched`, true);
+
+      if (errorFieldList) {
+        _.set(state.productFormValidation, `errorFieldList`, errorFieldList);
+      }
+
+    },
+
     changeProdEditMode: (state, action) => {
       state.isConfirmFlag = false;
       state.isProdEditMode = action.payload;
+    },
+
+
+    changeFormObject: (state, action) => {
+      state.formObject = action.payload;
     },
 
     /** form field */
@@ -92,6 +109,18 @@ const homeSlice = createSlice({
 
 
 
+    [getAllDataAction.pending]: (state) => {
+      state.isLoading = true;
+    },
+    [getAllDataAction.fulfilled]: (state, action) => {
+      state.isLoading = false;
+      state.formListData = action.payload
+    },
+    [getAllDataAction.rejected]: (state, action) => {
+      state.isLoading = false;
+    },
+
+
     [getSpecificIdInfoAction.pending]: (state) => {
       state.isLoading = true;
     },
@@ -111,5 +140,5 @@ export default homeSlice;
 
 
 export const {
-  changeProdEditMode, productFormFieldUpdateAction, formFieldValidationAction
+  changeProdEditMode, changeFormObject, productFormFieldUpdateAction, formFieldValidationAction, formSaveValidationAction
 } = homeSlice.actions;
