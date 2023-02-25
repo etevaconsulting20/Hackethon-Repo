@@ -16,8 +16,7 @@ const CommonTabComponent = (props) => {
     const formFieldList = _.get(productProfileTabInfo, "fieldList", [])
 
     const dispatch = useDispatch();
-    const productState = useSelector(state => state.products);
-    const companyState = useSelector((state) => state.company);
+    const productState = useSelector(state => state.home);
     const { formObject: formValueObject, productFormValidation, isProdEditMode, selectedProductSchema, } = productState
 
 

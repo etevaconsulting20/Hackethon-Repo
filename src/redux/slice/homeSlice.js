@@ -12,7 +12,29 @@ const initialState = {
 const homeSlice = createSlice({
   name: "homeSlice",
   initialState,
-  reducers: {},
+  reducers: {
+    /** form field */
+    productFormFieldUpdateAction: (state, action) => {
+      const { name, value } = action.payload
+      _.set(state.formObject, `${name}`, value);
+    },
+
+
+    
+    formFieldValidationAction: (state, action) => {
+      const { nameUpdated, errorMessage, touched } = action.payload;
+
+      _.set(state.productFormValidation.touched, `${nameUpdated}`, touched ? touched : false);
+
+      if (errorMessage) {
+        _.set(state.productFormValidation.errorMessage, `${nameUpdated}`, errorMessage);
+      }
+      else {
+        _.set(state.productFormValidation.errorMessage, `${nameUpdated}`, "");
+      }
+    },
+
+  },
   extraReducers: {
     [getNewsfeedAction.pending]: (state) => {
       state.isLoading = true;
@@ -29,3 +51,8 @@ const homeSlice = createSlice({
 });
 
 export default homeSlice;
+
+
+export const {
+  productFormFieldUpdateAction, formFieldValidationAction
+} = homeSlice.actions;
