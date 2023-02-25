@@ -18,6 +18,7 @@ const HomeList = () => {
     navigate("/app/home/add");
   };
   const handleEditClick = (item) => {
+    console.log("item", item)
     navigate(`/app/home/edit/${item.id}`);
   };
 
@@ -36,9 +37,9 @@ const HomeList = () => {
         <table className="table table-striped" style={{ marginLeft: 10 }}>
           <thead>
             <tr>
-              <th scope="col">#</th>
-              <th scope="col">First</th>
-              <th scope="col">Last</th>
+              {/* <th scope="col">#</th> */}
+              <th scope="col">Name</th>
+              <th scope="col">Email</th>
               <th scope="col">gender</th>
               <th scope="col">Actions</th>
             </tr>
@@ -48,9 +49,9 @@ const HomeList = () => {
               formListData[0] &&
               formListData.map((item, index) => (
                 <tr key={index}>
-                  <th scope="row">{item.id}</th>
-                  <td>{item.firstName}</td>
-                  <td>{item.lastName}</td>
+                  {/* <th scope="row">{item.id}</th> */}
+                  <td>{item.name}</td>
+                  <td>{item.email}</td>
                   <td>{item.gender}</td>
                   <td>
                     <i

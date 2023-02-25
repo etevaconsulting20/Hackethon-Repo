@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import _ from "lodash";
@@ -19,6 +20,8 @@ import { toast } from "react-toastify";
 const CommonTabComponent = (props) => {
   const { isUpdate } = props;
   const { t } = useTranslation("common");
+
+  const params = useParams()
 
   const homeState = useSelector((state) => state.home);
   const navigate = useNavigate();
@@ -231,9 +234,36 @@ const CommonTabComponent = (props) => {
     }
   }
 
+  const handleAdd = async () => {
+    try {
+      const productFlattenSchema = _.get(homeState, `selectedProductSchema.productFlattenSchema`, [])
+      const { errorMessageObject, errorFieldList } = await getValidationErrorObjectForYup(productFlattenSchema, formValueObject)
+
+
+      await dispatch(addSpecificFormDataInfoAction(formValueObject)).unwrap()
+      dispatch(changeFormObject({}))
+      navigate('/app/home/list')
+
+      // if (!_.isEmpty(errorMessageObject) || !_.isEmpty(errorFieldList)) {
+      //   await dispatch(addSpecificFormDataInfoAction()).unwrap()
+      //   dispatch(changeFormObject({}))
+      //   navigate('/app/home/list')
+      // }
+      // else {
+      //   dispatch(formSaveValidationAction({ errorMessageObject: errorMessageObject, errorFieldList: errorFieldList, }))
+      //   setTimeout(() => {
+      //     toast.error("Please validate information.", "Information", 2000);
+      //   }, 10);
+      // }
+    } catch (error) {
+
+    }
+  }
+
+
   const handleDelete = async () => {
     try {
-      await dispatch(removeSpecificFormDataInfoAction()).unwrap()
+      await dispatch(removeSpecificFormDataInfoAction(params.id)).unwrap()
       dispatch(changeFormObject({}))
       navigate("/app/home/list")
     } catch (error) {
@@ -254,10 +284,14 @@ const CommonTabComponent = (props) => {
             
         </div>*/}
         <div className="buttons-edit">
-          <button className="btn btn-primary m-1" onClick={handleSave}>Save</button>
+          {
+            !isUpdate && <button className="btn btn-primary m-1" onClick={handleAdd}>Add</button>
+          }
+          
           {
             isUpdate &&
             <>
+              <button className="btn btn-primary m-1" onClick={handleSave}>Save</button>
               <button className="btn btn-primary m-1" onClick={handleEdit}>Edit</button>
               <button className="btn btn-primary m-1" onClick={handleDelete}>Delete</button>
             </>

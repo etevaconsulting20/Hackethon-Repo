@@ -57,7 +57,7 @@ export default [
     // parentTab: "General",
     tabName: "Identifier_tab",
     readOnly: false,
-    type: "email",
+    type: "text",
     options: [],
     validationType: "",
     validations: [],

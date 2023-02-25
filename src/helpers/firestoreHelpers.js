@@ -14,7 +14,7 @@ export const dataCollectionRef = collection(db, "data");
 const getDoc = (type, id) => doc(db, type, id);
 
 export const getSchemaDoc = (id) => getDoc("schema", id);
-export const getDataDoc = (id) => getDoc("data", id);
+export const getDataDoc = async (id) => await getDoc("data", id);
 
 export const addData = async (payload) => {
   return await addDoc(dataCollectionRef, payload);
