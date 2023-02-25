@@ -96,7 +96,9 @@ export const getSpecificIdInfoAction = createAsyncThunk(
   async (arg, thunkApi) => {
     try {
 
-      const data = await getDataDoc(arg)
+      // debugger
+      // const data = await getDataDoc(arg)
+      const item = JSON.parse(localStorage.getItem("formDataItem"))
       // const response = await getAxios().get(
       //   `services/product/template/filter/use?name=${productType}`
       // );
@@ -105,8 +107,8 @@ export const getSpecificIdInfoAction = createAsyncThunk(
 
       //   }
       // }
-      console.log("data123", data)
-      return data
+      // console.log("data123", data)
+      return item
     } catch (err) {
       return thunkApi.rejectWithValue(err);
     }

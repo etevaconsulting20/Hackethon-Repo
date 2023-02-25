@@ -18,7 +18,7 @@ const HomeList = () => {
     navigate("/app/home/add");
   };
   const handleEditClick = (item) => {
-    console.log("item", item)
+    localStorage.setItem("formDataItem", JSON.stringify(item))
     navigate(`/app/home/edit/${item.id}`);
   };
 
