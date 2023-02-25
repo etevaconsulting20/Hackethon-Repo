@@ -22,7 +22,7 @@ export const addData = async (payload) => {
 
 export const updateData = async (payload) => {
   const dataDoc = getDataDoc(payload.id);
-  return await updateDoc(dataCollectionRef, payload);
+  return await updateDoc(dataDoc, payload);
 };
 
 export const deleteData = async (id) => {
