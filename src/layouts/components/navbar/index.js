@@ -6,7 +6,7 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { NavLink, useLocation } from "react-router-dom";
-import Logo from "src/assets/images/brand-logo/upids-pdm-logo.png";
+import Logo from "src/assets/images/brand-logo/logo.png";
 import { useThemeContext } from "src/layouts/theme";
 import Menu from "../sidebars/menu";
 
