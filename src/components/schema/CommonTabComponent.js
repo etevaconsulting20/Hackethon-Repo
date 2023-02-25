@@ -13,7 +13,9 @@ const CommonTabComponent = (props) => {
     const { productProfileTabInfo } = props
     const { t } = useTranslation('common');
 
-    const formFieldList = _.get(productProfileTabInfo, "fieldList", [])
+  const homeState = useSelector(state => state.home)
+  const formFieldList = _.get(homeState, 'selectedProductSchema.productFlattenSchema', [])
+//   const formFieldList = _.get(productProfileTabInfo, "fieldList", [])
 
     const dispatch = useDispatch();
     const productState = useSelector(state => state.home);

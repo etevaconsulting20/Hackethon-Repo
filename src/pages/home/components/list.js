@@ -5,17 +5,25 @@ import { getNewsfeedAction } from "src/redux/thunks/homeThunk";
 import { MdOutlineModeEdit, } from "react-icons/md";
 import { TabAccordion } from "src/components/TabAccordion";
 import CommonTabComponent from "src/components/schema/CommonTabComponent";
+import { getProductTemplateSchemaAction } from "src/redux/thunks/homeThunk";
+import _ from 'lodash'
+
 
 const HomeList = () => {
   const [search, changeSearch] = useState("");
   const dispatch = useDispatch();
   const homeState = useSelector(state => state.home)
-  const { newsFeedList } = homeState
-
+  const { newsFeedList, } = homeState
+  
   useEffect(() => {
-    dispatch(getNewsfeedAction({ language: "en" }))
+    dispatch(getProductTemplateSchemaAction())
   }, [])
-
+  
+  
+  
+  const selectedSchemaFlatten = _.get(homeState, 'selectedProductSchema.productFlattenSchema', [])
+  console.log("selectedSchemaFlatten", selectedSchemaFlatten)
+  
 
   const onChangeSearch = (e) => {
     let value = e.target.value;
@@ -24,32 +32,10 @@ const HomeList = () => {
   };
 
 
-  const accordionNewsFeedList = newsFeedList && newsFeedList.map((item, index) => {
-    const object = {
-      title: (
-        <span>
-          {/* <MdOutlineModeEdit style={{ fontSize: "1.2rem", marginRight: "1rem" }} /> */}
-          {item.title}
-        </span>
-      ),
-      tabs: () => (
-        <div key={index} className="mt-2">
-          <div>
-
-          </div>
-          <div dangerouslySetInnerHTML={{ __html: item.content }} />
-        </div>
-      )
-    }
-
-    return object
-  })
-
-
 
   return (
     <>
-    <CommonTabComponent />
+      <CommonTabComponent />
     </>
   );
 };

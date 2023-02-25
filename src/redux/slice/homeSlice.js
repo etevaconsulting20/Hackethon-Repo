@@ -1,11 +1,27 @@
 import { createSlice } from "@reduxjs/toolkit";
 import _ from "lodash";
-import { getNewsfeedAction } from "../thunks/homeThunk";
+import { getNewsfeedAction, getProductTemplateSchemaAction } from "../thunks/homeThunk";
 
 const initialState = {
   isLoading: false,
   newsFeedList: [],
   data: [],
+
+  selectedProductSchema: {
+    // formType: '', // add/update
+    productSchemaType: "",
+    productSchema: [],
+    productFlattenSchema: [],
+    productTabStructuredSchema: [],
+    // selectedTabInfo: {
+    //   tabName: "",
+    //   fieldList: [],
+    //   sectionLoading: [
+    //     // { name: "primary[0]", section: "Product profile Images" },
+    //   ],
+    // }
+  },
+
 };
 
 
@@ -20,7 +36,7 @@ const homeSlice = createSlice({
     },
 
 
-    
+
     formFieldValidationAction: (state, action) => {
       const { nameUpdated, errorMessage, touched } = action.payload;
 
@@ -47,7 +63,21 @@ const homeSlice = createSlice({
     [getNewsfeedAction.rejected]: (state, action) => {
       state.isLoading = false;
     },
+    [getProductTemplateSchemaAction.pending]: (state) => {
+    },
+    [getProductTemplateSchemaAction.fulfilled]: (state, action) => {
+      console.log("action.payload", action.payload)
+      const { productSchema, productFlattenSchema, productTabStructuredSchema } = action.payload
+      state.selectedProductSchema.productSchema = productSchema
+      state.selectedProductSchema.productFlattenSchema = productFlattenSchema
+      state.selectedProductSchema.productTabStructuredSchema = productTabStructuredSchema
+    },
+    [getProductTemplateSchemaAction.rejected]: (state, action) => {
+      state.isLoading = false;
+    },
   },
+
+
 });
 
 export default homeSlice;
