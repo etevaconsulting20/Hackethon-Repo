@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams, useLocation } from "react-router-dom";
 import CustomForm from "src/components/customForm";
-// import FormLoader from "src/helper/form-loader";
+// import FormLoader from "src/helpers/form-loader";
 
 import {
   // getSpecificUserDetailsById,

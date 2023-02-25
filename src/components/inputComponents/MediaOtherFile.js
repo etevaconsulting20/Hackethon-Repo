@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import _ from 'lodash';
 import Dropzone from 'react-dropzone'
 import ReactCrop from 'react-image-crop';
-import { getCroppedImg } from 'src/helper/CustomHook';
+import { getCroppedImg } from 'src/helpers/CustomHook';
 import 'react-image-crop/dist/ReactCrop.css';
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
 

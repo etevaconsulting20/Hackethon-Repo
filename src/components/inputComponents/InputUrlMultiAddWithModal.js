@@ -10,13 +10,13 @@ import CustomTooltip from "./CustomTooltip";
 import { useTranslation } from "react-i18next";
 import { UrlCard } from "src/components//UrlCard";
 import Modal from "react-bootstrap/Modal";
-import { Loader } from "src/components/Loader";
+import { Loader } from "src/components/Loader1";
 import { StCloseButton } from "src/components/StCloseButton";
 import { StSquareButton } from "src/components/StSquareButton";
 import { IconButton } from "src/components/IconButton";
 import { StCancelSquareButton } from "src/components/StCancelSquareButton";
 import FormFieldSchemaRender from "./FormFieldSchemaRender";
-import { getValidationErrorObjectForYup } from "src/helper/validationYupHelper";
+import { getValidationErrorObjectForYup } from "src/helpers/validationYupHelper";
 export function InputUrlMultiAddWithModal(props) {
   const {
     type,
