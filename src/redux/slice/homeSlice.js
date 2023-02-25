@@ -8,7 +8,13 @@ const initialState = {
   data: [],
 
   formObject: {},
-
+  isFormEditMode: false,
+  productFormValidation: {
+    isAllTouched: false,
+    touched: {},
+    errorMessage: {},
+    errorFieldList: [],
+  },
   selectedProductSchema: {
     // formType: '', // add/update
     productSchemaType: "",
@@ -31,6 +37,12 @@ const homeSlice = createSlice({
   name: "homeSlice",
   initialState,
   reducers: {
+
+    changeProdEditMode: (state, action) => {
+      state.isConfirmFlag = false;
+      state.isProdEditMode = action.payload;
+    },
+
     /** form field */
     productFormFieldUpdateAction: (state, action) => {
       const { name, value } = action.payload
@@ -68,7 +80,6 @@ const homeSlice = createSlice({
     [getProductTemplateSchemaAction.pending]: (state) => {
     },
     [getProductTemplateSchemaAction.fulfilled]: (state, action) => {
-      console.log("action.payload", action.payload)
       const { productSchema, productFlattenSchema, productTabStructuredSchema } = action.payload
       state.selectedProductSchema.productSchema = productSchema
       state.selectedProductSchema.productFlattenSchema = productFlattenSchema
@@ -86,5 +97,5 @@ export default homeSlice;
 
 
 export const {
-  productFormFieldUpdateAction, formFieldValidationAction
+  changeProdEditMode, productFormFieldUpdateAction, formFieldValidationAction
 } = homeSlice.actions;

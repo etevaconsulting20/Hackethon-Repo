@@ -10,12 +10,15 @@ import {
 } from "src/redux/slice/homeSlice";
 // import { ProductContext } from 'src/pages/products/ProductsContext';
 import CustomTooltip from "src/components/inputComponents/CustomTooltip";
+import { changeProdEditMode } from "src/redux/slice/homeSlice";
+
 
 const CommonTabComponent = (props) => {
   const { productProfileTabInfo } = props;
   const { t } = useTranslation("common");
 
-  const homeState = useSelector((state) => state.home);
+    const homeState = useSelector((state) => state.home);
+    
   const formFieldList = _.get(
     homeState,
     "selectedProductSchema.productFlattenSchema",
@@ -197,18 +200,32 @@ const CommonTabComponent = (props) => {
         ></div>
       );
     }
-  };
+    };
+    
+    const handleEdit = () => {
+        dispatch(changeProdEditMode(!homeState.isFormEditMode))
+    }
+
+    const handleSave = async () => {
+
+    }
+
+    const handleDelete = async () => {
+
+    }
+
+
 
   return (
     <>
-      <div className="row">
+    <div className="row">
         <div className="col-9">
-          {/* <h3 className="text-center">Form</h3> */}
+            
         </div>
         <div className="col-3">
-          <button className="btn btn-primary m-1">Save</button>
-          <button className="btn btn-primary m-1">Edit</button>
-          <button className="btn btn-primary m-1">Cancel</button>
+          <button className="btn btn-primary m-1" onClick={handleSave}>Save</button>
+          <button className="btn btn-primary m-1" onClick={handleEdit}>Edit</button>
+          <button className="btn btn-primary m-1" onClick={handleDelete}>Cancel</button>
         </div>
       </div>
       <div className="row">

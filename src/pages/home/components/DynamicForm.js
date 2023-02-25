@@ -9,7 +9,7 @@ import { getProductTemplateSchemaAction } from "src/redux/thunks/homeThunk";
 import _ from 'lodash'
 
 
-const HomeList = () => {
+const DynamicForm = () => {
   const [search, changeSearch] = useState("");
   const dispatch = useDispatch();
   const homeState = useSelector(state => state.home)
@@ -39,4 +39,4 @@ const HomeList = () => {
     </>
   );
 };
-export default HomeList;
+export default DynamicForm;
