@@ -8,7 +8,7 @@ import CustomTooltip from "./CustomTooltip";
 import { Popup } from "semantic-ui-react";
 
 import Modal from "react-bootstrap/Modal";
-import { Loader } from 'src/components/Loader';
+import { Loader } from 'src/components/Loader1';
 import { StCloseButton } from "src/components/StCloseButton";
 import { StSquareButton } from 'src/components/StSquareButton';
 import { getFieldAiDataAction } from 'src/redux/aiData/aiDataThunk';

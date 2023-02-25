@@ -9,7 +9,7 @@ import CustomTooltip from "./CustomTooltip";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from 'react-redux';
 import Modal from "react-bootstrap/Modal";
-import { Loader } from 'src/components/Loader';
+import { Loader } from 'src/components/Loader1';
 import { StCloseButton } from "src/components/StCloseButton";
 import { StSquareButton } from 'src/components/StSquareButton';
 import aiIcon from 'src/assets/svg/artificial-intelligence-robot.svg'

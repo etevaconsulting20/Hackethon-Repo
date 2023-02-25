@@ -10,8 +10,8 @@ import { useTranslation } from "react-i18next";
 import Modal from "react-bootstrap/Modal";
 import { StCloseButton } from "src/components/StCloseButton";
 import { StSquareButton } from 'src/components/StSquareButton';
-import { emailYuSchema } from "src/helper/yup-schema";
-import { validateYupSchemaObject } from "src/helper/validationYupHelper";
+// import { emailYuSchema } from "src/helpers/yup-schema";
+import { validateYupSchemaObject } from "src/helpers/validationYupHelper";
 
 
 export function InputEmailMultiAddWithModal(props) {
@@ -38,13 +38,13 @@ export function InputEmailMultiAddWithModal(props) {
   })
 
   useEffect(async () => {
-   const {errorMessageObject} = await validateYupSchemaObject(emailYuSchema, formData)
-    if (errorMessageObject) {
-      setFormValidation({
-        ...formValidation,
-        errorMessage: errorMessageObject
-      })
-    }
+  //  const {errorMessageObject} = await validateYupSchemaObject(emailYuSchema, formData)
+  //   if (errorMessageObject) {
+  //     setFormValidation({
+  //       ...formValidation,
+  //       errorMessage: errorMessageObject
+  //     })
+  //   }
     return () => {
     }
   }, [JSON.stringify(formData)])

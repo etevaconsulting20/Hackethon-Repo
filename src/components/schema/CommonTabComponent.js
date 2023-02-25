@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from "react-i18next";
 import _ from 'lodash';
-import { getValidationErrorForFieldForYup } from 'src/helper/validationYupHelper';
+import { getValidationErrorForFieldForYup } from 'src/helpers/validationYupHelper';
 import FormFieldSchemaRender from 'src/components/inputComponents/FormFieldSchemaRender';
 import { productFormFieldUpdateAction, formFieldValidationAction } from 'src/redux/products/productsSlice';
 import { ProductContext } from 'src/pages/products/ProductsContext';

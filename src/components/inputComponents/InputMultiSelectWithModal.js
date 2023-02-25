@@ -9,7 +9,6 @@ import { useTranslation } from "react-i18next";
 
 
 import Modal from "react-bootstrap/Modal";
-import { Loader } from 'src/components/Loader';
 import { StCloseButton } from "src/components/StCloseButton";
 import { StSquareButton } from 'src/components/StSquareButton';
 
