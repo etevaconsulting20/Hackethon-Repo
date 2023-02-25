@@ -203,8 +203,9 @@ const CommonTabComponent = (props) => {
     <>
     <div className="row">
         <div className="col-12">
-            <button className="btn btn-primary">Save</button>
-            <button className="btn btn-primary">Cancel</button>
+            <button className="btn btn-primary m-1">Save</button>
+            <button className="btn btn-primary m-1">Edit</button>
+            <button className="btn btn-primary m-1">Cancel</button>
             
         </div>
     </div>
