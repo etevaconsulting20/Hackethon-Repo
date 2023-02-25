@@ -1,0 +1,67 @@
+.MuiTable-root {
+  margin-right: 17px !important;
+  margin-left: 17px !important;
+  box-shadow: 0px 3px 6px #293f4802 !important;
+  border: 1px solid #ceeaf4 !important;
+  border-radius: 5px !important;
+  opacity: 1 !important;
+  height: "auto";
+}
+.MuiTableHead-root {
+  opacity: 1 !important;
+  background-color: #d8f3fc !important;
+}
+.MuiTableBody-root {
+  font-size: 13px;
+  background-color: white !important;
+}
+.MuiTableSortLabel-root.MuiTableSortLabel-active.MuiTableSortLabel-root.MuiTableSortLabel-active
+  .MuiTableSortLabel-icon {
+  width: 16px !important;
+  height: 16px !important;
+}
+.MuiTableSortLabel-iconDirectionAsc {
+  opacity: 1 !important;
+}
+.MuiTableSortLabel-iconDirectionDesc {
+  opacity: 1 !important;
+}
+.MuiPaper-elevation2 {
+  background-color: #eff8fd !important;
+  opacity: 1;
+  box-shadow: none !important;
+}
+.page-item:last-child .page-link {
+  border: unset !important;
+  color: black !important;
+}
+.page-item:first-child .page-link {
+  border: unset !important;
+  color: black !important;
+}
+.page-link {
+  border: unset !important;
+}
+
+.page-link:focus {
+  color: red !important;
+}
+
+.MuiTableCell-alignRight {
+  text-align: left !important;
+}
+
+.MuiTypography-h6 {
+  display: none !important;
+}
+.MuiToolbar-root {
+  display: none !important;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.pagination_button:active {
+  color: red;
+}

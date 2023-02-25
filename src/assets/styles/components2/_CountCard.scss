@@ -1,0 +1,177 @@
+.countcard {
+  margin-left: 16px;
+  margin-top: 16px;
+  height: 86px;
+  border-radius: 15px;
+  opacity: 1px;
+  background-color: #ffffff;
+  padding: 19px 29px 7px 29px;
+  &__title-span {
+    display: block;
+    font-weight: bold;
+    font-size: 14px;
+    
+  }
+  &__count-span {
+    display: block;
+    font-weight: bolder;
+    font-size: 32px;
+    
+  }
+}
+
+.newsfeedbackCard {
+  // margin: 3px;
+  // margin-top: 16px;
+  // height: auto;
+  height: 250px;
+  width: 49% !important;
+  // border-radius: 15px;
+  opacity: 1px;
+  background-color: #ffffff;
+  padding: 5px 5px 7px 5px;
+  border-style: solid;
+  border-width: 1.5px;
+  border-color: #DFEDF5;
+}
+.feedbacksCard {
+  // margin: 5px;
+  // margin-top: 16px;
+  // margin-left: 5px;
+  height: 250px;
+  width: 49% !important;
+  // border-radius: 15px;
+  opacity: 1px;
+  background-color: #ffffff;
+  padding: 5px 5px 7px 5px;
+  border-style: solid;
+  border-width: 1.5px;
+  border-color: #DFEDF5;
+}
+.newsfeedbackCard-span {
+  display: block;
+  font-weight: bolder;
+  font-size: 1.2rem;
+  
+}
+.prod_subtitle {
+  color: #354052 !important;
+  font-size: 12px;
+  
+  font-weight: 600;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.newsAndFeedbackTitle {
+  color: #354052;
+   
+    font-size: 13px;
+     font-weight: bold;
+}
+.newsAndFeedbackSubtitle {
+  display: inline-block;
+   
+    font-size: 14px;
+     font-weight: normal;
+      color: #6489A0;
+       margin-left: 5px;
+}
+
+.accordionCard {
+  margin: 5px;
+  // margin-top: 16px;
+  // height: auto;
+  // width: 48%;
+  border-radius: 15px;
+  opacity: 1px;
+  background-color: #ffffff;
+  padding: 10px 18px 7px 18px;
+  border-style: solid;
+  border-width: 1.5px;
+  border-color: #DFEDF5;
+}
+
+.carousalArrow {
+  position: absolute;
+  z-index: 1;
+  cursor: pointer;
+  display: flex;
+align-self: center;
+background-color: #aca8a880;
+    border-radius: 20px;
+    padding: 4px;
+}
+.rightScrollCardIcon {
+  position: absolute;
+  right:7px;
+}
+.latestFeedbackCardBorder{
+  border: 1px solid rgb(223, 237, 245);
+    border-radius: 0.625rem;
+    width: 47%;
+    height: fit-content;
+    padding: 5px;
+    overflow: auto;
+}
+.latestFeedbackCard{
+  display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.scoreCountCard{
+    margin: 2px;
+    // height: auto;
+    height: 250px;
+    width: 25% !important;
+    // border-radius: 15px;
+    opacity: 1px;
+    background-color: #ffffff;
+    padding: 5px 5px 7px 5px;
+    border-style: solid;
+    border-width: 1.5px;
+    border-color: #DFEDF5;
+}
+.feedbackModalDiv{
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+.scoreHeading{
+  text-align: center;
+  font-size: 50px;
+}
+.newsFeedRow{
+  border: 1px solid rgb(223, 237, 245);
+  cursor: pointer;
+}
+
+table.MuiTable-root{
+  margin-right: 17px !important;
+    margin-left: 0px !important;
+    box-shadow: 0px 3px 6px #293f4802 !important;
+    border: 1px solid #ceeaf4 !important;
+    border-radius: 5px !important;
+    opacity: 1 !important;
+}
+
+
+@media (max-width: 768px){
+  .newsfeedbackCard {
+    margin: 5px;
+    height: auto;
+    width: 98% !important;
+  }
+  .feedbacksCard {
+    margin: 5px;
+    height: 350px;
+    width: 98% !important;
+  }
+  .scoreCountCard{
+    margin: 5px;
+    height: auto;
+    width: 98% !important;
+  }
+}

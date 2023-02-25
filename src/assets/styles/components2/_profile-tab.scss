@@ -1,0 +1,56 @@
+.profile-tab {
+  .ui.secondary.pointing.menu {
+    overflow-x: scroll;
+    overflow-y: auto;
+    border-bottom: 1px solid rgba(34,36,38,.15);
+  }
+  .ui.secondary.pointing.menu .active.item{
+    margin-bottom:1px;
+  }
+}
+
+// product profile tabs
+.ui.menu.fluid, .ui.vertical.menu.fluid {
+  width: max-content !important;
+  background-color: #131e27;
+}
+.profile-tab .ui.grid .stretched.twelve.wide.column {
+ width: 100% !important;
+}
+.profile-tab .ui.grid .four.wide.column {
+  position: absolute;
+  left: -200px;
+ }
+ .ui.vertical.menu .item{
+  color: #ffffff;
+}
+.ui.vertical.menu .active.item{
+  color: #cf2948;
+}
+
+//  product profile tabs icon for sidebar
+ .iconSidebarButton {
+  cursor: "pointer";
+  background-color: #dc3545;
+  width: 25px;
+  border-top-right-radius:25px;
+  border-bottom-right-radius:25px;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
+
+@media (min-width: 576px) {
+  .productNavResponsiveDropdown{
+    display: none !important;
+  }
+}

@@ -1,0 +1,16 @@
+.paginationButton {
+    //width: 'auto', height: 20, backgroundColor: '#EFF8FD', border: 'none'
+    width: auto;
+    height: 20;
+    background-color: inherit;
+    border: none;
+}
+.table-cell-trucate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+.show>.dropdown-menu {
+    display: block;
+    position: absolute;
+  }

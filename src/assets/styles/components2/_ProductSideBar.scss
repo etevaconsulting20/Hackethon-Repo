@@ -1,0 +1,72 @@
+$opacity: 1;
+$text-align: center;
+$margin-top: 30px;
+$color: #293f48;
+$font-size: 14px;
+$background-color: transparent;
+
+.productsidebar {
+  // height: calc(100vh - 5.3125rem);
+  height: auto;
+  @media only screen and (max-width: 1200px) {
+    display: flex;
+    height: auto;
+    flex-direction: row;
+  }
+  .imgTag {
+    display: block;
+    width: 100% !important;
+    height: auto !important;
+    // max-height: 250px;
+    max-width: 350px;
+    border-radius: 15px;
+    border: 1px solid #c8dbe6;
+    opacity: $opacity;
+    background-color: $background-color;
+    margin: 0 auto;
+  }
+  .hrTag {
+    margin-top: 10px;
+  }
+  .titlediv {
+    text-align: $text-align;
+    margin-top: 20px;
+    .title {
+      font-weight: bolder;
+      font-size: 24px;
+      
+      height: 53px;
+      width: 238px;
+      color: #131e27;
+      opacity: $opacity;
+    }
+  }
+  .subtitlediv {
+    text-align: $text-align;
+    margin-top: 18px;
+    .subtitle {
+      color: $color;
+      font-size: $font-size;
+      
+    }
+  }
+  .descdiv {
+    text-align: $text-align;
+    margin-top: 16px;
+  }
+  .btn {
+    width: 160px !important;
+    height: 32px !important;
+    border-radius: 17px !important;
+    background-color: #33d16a !important;
+    color: #ffffff !important;
+    text-transform: uppercase !important;
+    font-size: $font-size !important;
+  }
+  .qrcodeimg {
+    width: 88px !important;
+    height: 88px !important;
+    background-color: $background-color;
+    opacity: $opacity;
+  }
+}

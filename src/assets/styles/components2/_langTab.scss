@@ -1,0 +1,17 @@
+.multilang-tab {
+  .ui.secondary.menu {
+    margin-left: 2.5rem;
+  }
+  .ui.secondary.menu a {
+    text-transform: uppercase !important;
+    font-size: 12px;
+  }
+  .ui.secondary.menu .active.item {
+    color: $st-red;
+    border-bottom: 4px solid $st-red;
+    background: none;
+    border-radius: 0;
+    font-size: 12px;
+    font-weight: $font-weight-semibold;
+  }
+}

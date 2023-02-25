@@ -1,0 +1,121 @@
+$z-index: 99;
+$align-self: center;
+$display: flex;
+$flex-direction: column;
+$cursor: pointer;
+
+.homepage-main-div {
+  display: $display;
+  flex-direction: $flex-direction;
+  background-color: #eff8fd;
+  height: 100%;
+  .homepage-search-input-div {
+    height: 76px;
+    display: $display;
+    background-color: #eff8fd;
+    position: fixed;
+    z-index: $z-index;
+    width: 100%;
+    .homepage-search-input {
+      width: 460px;
+      margin-left: 15px;
+      height: 48px;
+      outline: none;
+      border: 0px;
+      background-color: #ffffff;
+      align-self: $align-self;
+      border-radius: 12px;
+      padding-right: 24px;
+      padding-left: 24px;
+      font-size: 16px;
+    }
+    #homepage-search-button {
+      opacity: 1 !important;
+      height: 48px;
+      width: 119px;
+      border-radius: 12px;
+      align-self: $align-self;
+      font-size: 14px;
+      margin-left: 11px;
+      
+      font-weight: normal;
+      .homepage-loader {
+        height: 20px;
+        width: 20px;
+        right: 10px;
+        top: 15px;
+      }
+    }
+    .homepage-searched-text-span {
+      
+      font-size: 12px;
+      cursor: $cursor;
+      align-self: $align-self;
+      margin-left: 12px;
+      background-color: #ceeaff;
+      height: 30px;
+      padding-inline: 10px;
+      padding-top: 7px;
+      color: #131e27;
+      border-radius: 4px;
+      margin-left: 15px;
+    }
+    .homepage-view-all-text-span {
+      
+      font-size: 12px;
+      cursor: $cursor;
+      align-self: $align-self;
+      margin-left: 12px;
+    }
+  }
+  .homepage-main-subdiv {
+    display: $display;
+    flex-direction: $flex-direction;
+    margin-top: 100px;
+    // .users_subdiv {
+    //   display: $display;
+    //   height: 70px;
+    //   margin-left: 16px;
+    //   .users_subdiv-1 {
+    //     flex: 1;
+    //     align-self: $align-self;
+    //     .users_total-products-span-text {
+    //       font-size: 14px;
+    //       
+    //       font-weight: bold;
+    //       align-self: $align-self;
+    //     }
+    //     .users_total-manu-span-text {
+    //       font-size: 14px;
+    //       
+    //       font-weight: bold;
+    //       align-self: $align-self;
+    //       margin-left: 42px;
+    //     }
+    //   }
+    //   .users_subdiv-2 {
+    //     display: $display;
+    //     flex: 1;
+    //     align-self: $align-self;
+    //     justify-content: flex-end;
+    //     margin-right: 26px;
+    //     .users_sort-by-span-text {
+    //       font-size: 12px;
+    //       
+    //       font-weight: light;
+    //       align-self: $align-self;
+    //     }
+    //     .users_dropdown-style {
+    //       margin: 20px;
+    //       width: 158px;
+    //       height: 40px;
+    //       z-index: $z-index;
+    //       background-color: #f1f9ff;
+    //       border: 1px solid #dae6ee;
+    //       border-radius: 12px;
+    //       opacity: 1px;
+    //     }
+    //   }
+    // }
+  }
+}

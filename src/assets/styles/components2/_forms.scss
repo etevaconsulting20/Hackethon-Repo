@@ -1,0 +1,77 @@
+/* Forms */
+
+.form-control {
+  border: 1px solid $border-color;
+  font-weight: $font-weight-regular;
+  font-size: $input-font-size;
+}
+
+.form-group {
+  label {
+    display: block;
+    font-size:12px;
+    margin-bottom: 9px;
+    color: #6489A0;
+    
+    text-transform: uppercase;
+  }
+  input {
+    background-color: #F8FCFD;
+    border-radius: 7px;
+    border: 1px solid #c5cfd6;
+    height: 40px;
+    font-size: 12px;
+    
+    padding:16px;
+    width: 100%;
+    color: #253C4B;
+    
+    &::placeholder{
+      color: #96A5AF;
+      
+      font-weight: lighter;
+    }
+    &:read-only{
+      border: 0px;
+    }
+    &:not([readonly]):focus{
+      border: 1px solid #687E91;
+    }
+    &.has-danger {
+      border: 1px solid #FF6060;
+    }
+  }
+  textarea {
+    background-color: #F8FCFD;
+    border-radius: 7px;
+    border: 1px solid #DBE7EF;
+    height: 170px;
+    font-size: 12px;
+    
+    padding:16px;
+    width: 100%;
+    color: #253C4B;
+    
+    &::placeholder{
+      color: #96A5AF;
+      
+      font-weight: lighter;
+    }
+    &:read-only{
+      border: 0px;
+    }
+    &:not([readonly]):focus{
+      border: 1px solid #687E91;
+    }
+    &.has-danger {
+      border: 1px solid #FF6060;
+    }
+  }
+  .file-upload-default {
+    visibility: hidden;
+    position: absolute;
+  }
+  .file-upload-info {
+    background: transparent;
+  }
+}

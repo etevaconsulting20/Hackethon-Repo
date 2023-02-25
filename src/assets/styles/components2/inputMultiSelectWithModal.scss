@@ -1,0 +1,84 @@
+.inputMultiSelectWithModal {
+    margin-top: .6rem;
+    margin-bottom: .6rem;
+
+    &__label {
+        max-width: 100%;
+        display: flex;
+
+        label {
+            display: block;
+            margin-bottom: .5rem;
+            color: #6489a0;
+            text-transform: uppercase;
+            color: #253c4b;
+            font-size: 14px;
+            font-weight: 700;
+        }
+    }
+
+    &__value {
+        margin-left: 2rem;
+    }
+
+
+    &__inputwrapper {
+        margin-top: .5rem;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+
+
+        &__input {
+            padding: .5rem !important;
+            height: 2rem !important;
+            font-family: Lato, Helvetica Neue, Arial, Helvetica, sans-serif;
+            box-shadow: none;
+            border: 1px solid rgba(34, 36, 38, .15);
+            border-radius: .5rem 0rem 0rem .5rem !important;
+            background: #fff;
+            border-color: #e0e1e2;
+
+
+            // background-color: #f8fcfd;
+            // border-radius: 7px;
+            // border: 1px solid #ededed;
+            // height: 40px;
+            // font-size: 12px;
+            // padding: 16px;
+            // width: 100%;
+            // color: #253c4b;
+            // outline: none;
+        }
+
+        &__input:read-only {
+            background-color: #f8fcfd;
+        }
+
+        &__button {
+
+            cursor: pointer;
+            border-radius: 0rem .5rem .5rem 0rem !important;
+            outline: 0;
+            border: none;
+            vertical-align: baseline;
+            background: #e0e1e2 none;
+            color: rgba(0, 0, 0, .6);
+            font-family: Lato, Helvetica Neue, Arial, Helvetica, sans-serif;
+            text-transform: none;
+            text-shadow: none;
+            font-weight: 700;
+            text-align: center;
+            box-shadow: none;
+        }
+
+        &__aiIcon {
+            // position: absolute;
+            // cursor: pointer;
+            // right: 1rem;
+            // top: 2.5rem;
+            // font-size: 1.5rem;
+            // height: 1.5rem;
+        }
+    }
+}
