@@ -8,10 +8,10 @@ import CustomTooltip from "./CustomTooltip";
 import { Popup } from "semantic-ui-react";
 
 import Modal from "react-bootstrap/Modal";
-import { Loader } from 'src/components/Loader1';
+// import { Loader } from 'src/components/Loader';
 import { StCloseButton } from "src/components/StCloseButton";
 import { StSquareButton } from 'src/components/StSquareButton';
-import { getFieldAiDataAction } from 'src/redux/aiData/aiDataThunk';
+// import { getFieldAiDataAction } from 'src/redux/aiData/aiDataThunk';
 
 
 
@@ -66,19 +66,19 @@ export function InputTextWithLabel(props) {
 
 
     const handleAiDataModal = async () => {
-        setShowAiDataModal(true)
-        try {
-            const responseData = await dispatch(getFieldAiDataAction({
-                text: value
-            })).unwrap()
+        // setShowAiDataModal(true)
+        // try {
+        //     const responseData = await dispatch(getFieldAiDataAction({
+        //         text: value
+        //     })).unwrap()
 
-            setModalData({
-                ...modalData,
-                aiDataResponse: responseData.trim()
-            })
-        } catch (error) {
+        //     setModalData({
+        //         ...modalData,
+        //         aiDataResponse: responseData.trim()
+        //     })
+        // } catch (error) {
 
-        }
+        // }
 
     }
 
@@ -181,10 +181,10 @@ export function InputTextWithLabel(props) {
                     </div>
                 </Modal.Header>
                 <Modal.Body style={{ fontWeight: 'normal' }}>
-                    {
+                    {/* {
                         isLoading &&
                         <Loader color='primary' />
-                    }
+                    } */}
 
                     {modalData.aiDataResponse}
 

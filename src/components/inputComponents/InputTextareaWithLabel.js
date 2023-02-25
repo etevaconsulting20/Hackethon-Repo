@@ -9,11 +9,11 @@ import CustomTooltip from "./CustomTooltip";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from 'react-redux';
 import Modal from "react-bootstrap/Modal";
-import { Loader } from 'src/components/Loader1';
+// import { Loader } from 'src/components/Loader1';
 import { StCloseButton } from "src/components/StCloseButton";
 import { StSquareButton } from 'src/components/StSquareButton';
 import aiIcon from 'src/assets/svg/artificial-intelligence-robot.svg'
-import { getFieldAiDataAction } from 'src/redux/aiData/aiDataThunk';
+// import { getFieldAiDataAction } from 'src/redux/aiData/aiDataThunk';
 
 
 
@@ -67,19 +67,19 @@ export function InputTextareaWithLabel(props) {
 
 
   const handleAiDataModal = async () => {
-    setShowAiDataModal(true)
-    try {
-      const responseData = await dispatch(getFieldAiDataAction({
-        text: props.value
-      })).unwrap()
+    // setShowAiDataModal(true)
+    // try {
+    //   const responseData = await dispatch(getFieldAiDataAction({
+    //     text: props.value
+    //   })).unwrap()
 
-      setModalData({
-        ...modalData,
-        aiDataResponse: responseData.trim()
-      })
-    } catch (error) {
+    //   setModalData({
+    //     ...modalData,
+    //     aiDataResponse: responseData.trim()
+    //   })
+    // } catch (error) {
 
-    }
+    // }
 
   }
 
@@ -187,10 +187,10 @@ export function InputTextareaWithLabel(props) {
           </div>
         </Modal.Header>
         <Modal.Body style={{ fontWeight: 'normal' }}>
-          {
+          {/* {
             isLoading &&
             <Loader color='primary' />
-          }
+          } */}
           {modalData.aiDataResponse}
         </Modal.Body>
         <Modal.Footer style={{ justifyContent: 'center' }}>

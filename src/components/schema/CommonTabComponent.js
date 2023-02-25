@@ -4,8 +4,8 @@ import { useTranslation } from "react-i18next";
 import _ from 'lodash';
 import { getValidationErrorForFieldForYup } from 'src/helpers/validationYupHelper';
 import FormFieldSchemaRender from 'src/components/inputComponents/FormFieldSchemaRender';
-import { productFormFieldUpdateAction, formFieldValidationAction } from 'src/redux/products/productsSlice';
-import { ProductContext } from 'src/pages/products/ProductsContext';
+import { productFormFieldUpdateAction, formFieldValidationAction } from 'src/redux/slice/homeSlice';
+// import { ProductContext } from 'src/pages/products/ProductsContext';
 import CustomTooltip from 'src/components/inputComponents/CustomTooltip';
 
 
@@ -21,11 +21,7 @@ const CommonTabComponent = (props) => {
     const { formObject: formValueObject, productFormValidation, isProdEditMode, selectedProductSchema, } = productState
 
 
-    /**
-     * @description product form language
-     */
-    const productLanguageTabContext = useContext(ProductContext);
-    const languageTabIndex = productLanguageTabContext.langTabIndex
+
 
 
 
@@ -39,29 +35,7 @@ const CommonTabComponent = (props) => {
     }, [JSON.stringify(formFieldList)])
 
 
-    /**
-     * @handler
-     */
-    const handleChangeProductLanguage = (item, activeIndex) => {
-        productLanguageTabContext.setLangTabIndex(activeIndex)
-    }
-
-    const getSelectedProductFormLanguage_value = () => {
-        const languageListValue = {
-            formLanguageList: [{ label: "English", value: "en" }],
-            selectedFormLanguage: "en"
-        }
-
-        let supportedLanguageList = _.get(companyState, 'companyInfo.supportedLanguages', [{ name: "English", code: "en" },])
-        supportedLanguageList = supportedLanguageList.map((item) => ({ label: item.name, value: item.code }))
-        languageListValue.formLanguageList = supportedLanguageList
-
-        if (languageListValue.formLanguageList && languageListValue.formLanguageList[languageTabIndex]) {
-            languageListValue.selectedFormLanguage = languageListValue.formLanguageList[languageTabIndex].value
-        }
-        return languageListValue
-    }
-    const { formLanguageList, selectedFormLanguage } = getSelectedProductFormLanguage_value()
+    
 
 
 
@@ -95,49 +69,6 @@ const CommonTabComponent = (props) => {
 
 
 
-
-    /**
-     * @ProductFieldLanguageTab
-     */
-    let isMultilingualTabCreated = false;
-    const handleShowProductFieldMultilingualTab = (item, index) => {
-        if (item.isMultilingual && !isMultilingualTabCreated) {
-            isMultilingualTabCreated = true;
-            return (
-                <div key={`multilingualTab_${item.name}_${index}`} style={{ margin: "10px" }} className="d-flex product-profile-navbar align-items-center border-0" >
-                    <div className='font-weight-bold mr-3'>
-                        Language
-                    </div>
-                    <div id="navbarProductProfile">
-                        <ul className="nav nav-pills">
-                            {
-                                formLanguageList && formLanguageList[0] && formLanguageList.map((item, index) => (
-                                    <React.Fragment key={index}>
-                                        <li className="nav-item">
-                                            <a className="nav-link font-weight-normal" role="button"
-                                                data-tabselect={item.value == selectedFormLanguage}
-                                                onClick={() => handleChangeProductLanguage(item, index)}
-                                            >
-                                                {item.label}
-                                            </a>
-                                        </li>
-                                    </React.Fragment>
-                                ))}
-                        </ul>
-                    </div>
-                </div>
-            )
-        }
-        else if (!item.isMultilingual && isMultilingualTabCreated) {
-            isMultilingualTabCreated = false;
-            return (
-                <div key={`multilingualTab_${item.name}_${index}`} style={{ margin: "10px" }}>
-
-                </div>
-            )
-        }
-
-    }
 
 
     /**
@@ -254,7 +185,6 @@ const CommonTabComponent = (props) => {
         <div className='row'>
             {formFieldList && formFieldList[0] && formFieldList.map((item, index) => (
                 <React.Fragment key={`formFieldSchemaRender_main_${item.name}_${index}`}>
-                    {handleShowProductFieldMultilingualTab(item, index)}
                     {handleShowProductFieldSection(item, index)}
                     {handleShowProductFieldSubsection(item, index)}
                     <FormFieldSchemaRender
@@ -266,8 +196,6 @@ const CommonTabComponent = (props) => {
                         formValidationObject={productFormValidation}
                         onBlur={(e) => handleBlurChange(e, item)}
                         onChange={handleInputChange}
-                        formLanguageList={formLanguageList}
-                        selectedFormLanguage={selectedFormLanguage}
                     />
                 </React.Fragment>
             ))}

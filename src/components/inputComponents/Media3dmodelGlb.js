@@ -13,7 +13,7 @@ import Modal from "react-bootstrap/Modal";
 import { MdCrop, MdClose, MdFileUpload, MdDelete, MdAddCircleOutline } from 'react-icons/md';
 import { MediaImage } from './MediaImage';
 import { getAllProductImagesAction, uploadProductFileAction, deleteImageAction, getImageDownload, } from 'src/redux/media/mediaThunk';
-import { addRemoveSectionLoadingAction } from 'src/redux/products/productsSlice';
+import { addRemoveSectionLoadingAction } from 'src/redux/slice/homeSlice';
 import { getProductByIdAction } from 'src/redux/products/productThunk';
 import { IconButton } from 'src/components/IconButton';
 import { StCloseButton } from "src/components/StCloseButton";

@@ -11,7 +11,7 @@ import { useTranslation } from 'react-i18next';
 
 import { MediaImage } from './MediaImage';
 import { uploadProductFileAction } from 'src/redux/media/mediaThunk';
-import { addRemoveSectionLoadingAction } from 'src/redux/products/productsSlice';
+import { addRemoveSectionLoadingAction } from 'src/redux/slice/homeSlice';
 import { getProductByIdAction } from 'src/redux/products/productThunk';
 import { IconButton } from 'src/components/IconButton';
 import { MdFileUpload } from 'react-icons/md';

@@ -5,7 +5,7 @@ import ReactCrop from 'react-image-crop';
 import { getCroppedImg } from 'src/helpers/CustomHook';
 import 'react-image-crop/dist/ReactCrop.css';
 
-import { addRemoveSectionLoadingAction } from 'src/redux/products/productsSlice';
+import { addRemoveSectionLoadingAction } from 'src/redux/slice/homeSlice';
 import { getProductByIdAction } from 'src/redux/products/productThunk';
 import { getAllProductImagesAction, uploadProductFileAction, deleteImageAction, getImageDownload, } from 'src/redux/media/mediaThunk';
 import { shallowEqual, useDispatch, useSelector } from "react-redux";

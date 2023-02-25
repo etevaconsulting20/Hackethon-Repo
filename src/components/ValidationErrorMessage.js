@@ -3,7 +3,7 @@ import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { getSelectTabInfoFromProductTabStructuredSchema_tabName } from 'src/helpers/helpers';
 import { getErrorTabListWithFields } from 'src/helpers/validationYupHelper';
-import { selectProductTabInfoAction } from 'src/redux/products/productsSlice';
+import { selectProductTabInfoAction } from 'src/redux/slice/homeSlice';
 import Modal from "react-bootstrap/Modal";
 import { StCloseButton } from './StCloseButton';
 import _ from 'lodash';
