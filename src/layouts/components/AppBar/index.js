@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useThemeContext } from "src/layouts/theme";
-import Logo from "src/assets/images/brand-logo/upids-pdm-logo.png";
+import Logo from "src/assets/images/brand-logo/logo.png";
 import { useTranslation } from "react-i18next";
 
 function Toggle({ label, value, checked, onChange, ...props }) {

@@ -3,7 +3,7 @@ import React, { useRef, forwardRef } from "react";
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
 // import logo from "src/assets/images/Eteva_Logo.svg";
-import logo from "src/assets/images/brand-logo/upids-satellite-logo.png";
+import logo from "src/assets/images/brand-logo/logo.png";
 import { useThemeContext } from "src/layouts/theme";
 import Menu from "./menu";
 
@@ -52,7 +52,7 @@ const SideBar = forwardRef((props, ref) => {
             <span
               className={`fs-4 px-3 py-1 ${themeObj.theme === "light" ? "bg-transparent" : "bg-white"} sidebarLogo`}
             >
-              <img style={{ width: "12rem", objectFit: "contain" }} src={logo} alt="SmartPipe" />
+              <img style={{ width: "12rem", objectFit: "contain", height: "3rem" }} src={logo} alt="SmartPipe" />
             </span>
           </a>
           <hr style={{ margin: "8px" }} />
