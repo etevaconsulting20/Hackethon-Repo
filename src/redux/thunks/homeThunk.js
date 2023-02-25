@@ -3,7 +3,7 @@ import { getAxios } from "src/helpers/axiosInterceptor";
 import I18n from "i18next";
 import testSchema1 from "src/helpers/productFormSchema/testSchema1";
 import { getProduct_flatten_TabStructured_Schema } from "src/helpers/helpers";
-import { getFormData, getDataDoc, addData, deleteData } from "src/helpers/firestoreHelpers";
+import { getFormData, getDataDoc, addData, deleteData, updateData } from "src/helpers/firestoreHelpers";
 
 export const getNewsfeedAction = createAsyncThunk(
   "home/getNewsfeedAction",
@@ -135,6 +135,31 @@ export const addSpecificFormDataInfoAction = createAsyncThunk(
       // await thunkApi.dispatch(getAllDataAction())
       // return response.data
       await addData(arg)
+    } catch (err) {
+      return thunkApi.rejectWithValue(err);
+    }
+  }
+);
+
+
+
+export const updateSpecificFormDataInfoAction = createAsyncThunk(
+  "product/updateSpecificFormDataInfoAction",
+  async (arg, thunkApi) => {
+    try {
+
+
+      // const response = await getAxios().get(
+      //   `services/product/template/filter/use?name=${productType}`
+      // );
+      // const response = {
+      //   data: {
+
+      //   }
+      // }
+      // await thunkApi.dispatch(getAllDataAction())
+      // return response.data
+      await updateData(arg)
     } catch (err) {
       return thunkApi.rejectWithValue(err);
     }

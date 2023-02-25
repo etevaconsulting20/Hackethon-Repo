@@ -12,7 +12,7 @@ import {
 // import { ProductContext } from 'src/pages/products/ProductsContext';
 import CustomTooltip from "src/components/inputComponents/CustomTooltip";
 import { changeProdEditMode, changeFormObject, formSaveValidationAction } from "src/redux/slice/homeSlice";
-import { addSpecificFormDataInfoAction, removeSpecificFormDataInfoAction } from "src/redux/thunks/homeThunk";
+import { addSpecificFormDataInfoAction, removeSpecificFormDataInfoAction, updateSpecificFormDataInfoAction } from "src/redux/thunks/homeThunk";
 import { useNavigate } from "react-router-dom";
 import { getValidationErrorObjectForYup } from "src/helpers/validationYupHelper";
 import { toast } from "react-toastify";
@@ -214,21 +214,25 @@ const CommonTabComponent = (props) => {
   }
 
   const handleSave = async () => {
+    debugger
     try {
-      const productFlattenSchema = _.get(homeState, `selectedProductSchema.productFlattenSchema`, [])
-      const { errorMessageObject, errorFieldList } = await getValidationErrorObjectForYup(productFlattenSchema, formValueObject)
+      // const productFlattenSchema = _.get(homeState, `selectedProductSchema.productFlattenSchema`, [])
+      // const { errorMessageObject, errorFieldList } = await getValidationErrorObjectForYup(productFlattenSchema, formValueObject)
+      await dispatch(updateSpecificFormDataInfoAction(formValueObject)).unwrap()
+      dispatch(changeFormObject({}))
+      navigate('/app/home/list')
 
-      if (!_.isEmpty(errorMessageObject) || !_.isEmpty(errorFieldList)) {
-        await dispatch(addSpecificFormDataInfoAction()).unwrap()
-        dispatch(changeFormObject({}))
-        navigate('/app/home/list')
-      }
-      else {
-        dispatch(formSaveValidationAction({ errorMessageObject: errorMessageObject, errorFieldList: errorFieldList, }))
-        setTimeout(() => {
-          toast.error("Please validate information.", "Information", 2000);
-        }, 10);
-      }
+      // if (!_.isEmpty(errorMessageObject) || !_.isEmpty(errorFieldList)) {
+      //   await dispatch(updateSpecificFormDataInfoAction(formValueObject)).unwrap()
+      //   dispatch(changeFormObject({}))
+      //   navigate('/app/home/list')
+      // }
+      // else {
+      //   dispatch(formSaveValidationAction({ errorMessageObject: errorMessageObject, errorFieldList: errorFieldList, }))
+      //   setTimeout(() => {
+      //     toast.error("Please validate information.", "Information", 2000);
+      //   }, 10);
+      // }
     } catch (error) {
 
     }
@@ -291,6 +295,10 @@ const CommonTabComponent = (props) => {
           {
             isUpdate &&
             <>
+              <div style={{
+                padding: 10
+              }}></div>
+              
               <button className="btn btn-primary m-1" onClick={handleSave}>Save</button>
               <button className="btn btn-primary m-1" onClick={handleEdit}>Edit</button>
               <button className="btn btn-primary m-1" onClick={handleDelete}>Delete</button>
