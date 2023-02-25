@@ -16,7 +16,7 @@ const Home = () => {
             element={<Navigate replace="/" to={`${Location.pathname}/list`} />}
           ></Route>
           <Route path={"add"} element={<DynamicForm />}></Route>
-          <Route path={"edit"} element={<DynamicFormUpdate />}></Route>
+          <Route path={"edit/:id"} element={<DynamicFormUpdate />}></Route>
           <Route path={"list"} element={<HomeList />}></Route>
         </Routes>
       </div>

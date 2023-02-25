@@ -42,3 +42,25 @@ export const getProductTemplateSchemaAction = createAsyncThunk(
     }
   }
 );
+
+
+export const getSpecificIdInfoAction = createAsyncThunk(
+  "product/getSpecificIdInfoAction",
+  async (arg, thunkApi) => {
+    try {
+
+      
+      // const response = await getAxios().get(
+        //   `services/product/template/filter/use?name=${productType}`
+        // );
+      const response = {
+        data: {
+            
+          }
+        }
+        return response.data
+    } catch (err) {
+      return thunkApi.rejectWithValue(err);
+    }
+  }
+);

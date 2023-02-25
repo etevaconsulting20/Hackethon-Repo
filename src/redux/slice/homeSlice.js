@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import _ from "lodash";
-import { getNewsfeedAction, getProductTemplateSchemaAction } from "../thunks/homeThunk";
+import { getNewsfeedAction, getProductTemplateSchemaAction, getSpecificIdInfoAction } from "../thunks/homeThunk";
 
 const initialState = {
   isLoading: false,
@@ -86,6 +86,20 @@ const homeSlice = createSlice({
       state.selectedProductSchema.productTabStructuredSchema = productTabStructuredSchema
     },
     [getProductTemplateSchemaAction.rejected]: (state, action) => {
+      state.isLoading = false;
+    },
+
+
+
+
+    [getSpecificIdInfoAction.pending]: (state) => {
+      state.isLoading = true;
+    },
+    [getSpecificIdInfoAction.fulfilled]: (state, action) => {
+      state.isLoading = false;
+      state.formObject = action.payload
+    },
+    [getSpecificIdInfoAction.rejected]: (state, action) => {
       state.isLoading = false;
     },
   },
