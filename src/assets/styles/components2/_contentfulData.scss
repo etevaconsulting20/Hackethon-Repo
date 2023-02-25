@@ -1,0 +1,26 @@
+
+.newsAndFeedbackText {
+  
+  font-size: 14px;
+  font-weight: normal;
+  color: #6489A0;
+}
+
+
+.contenfulData__image {
+    max-height: 50vh;
+    max-width: 80vw;
+}
+
+.contenfulData{
+  &__youtubeVideo {
+    display: flex;
+    // justify-content: center;
+    align-items: center;
+  }
+}
+
+.youTubeVideoIframe {
+  height: 20rem;
+  width: 30rem;
+}

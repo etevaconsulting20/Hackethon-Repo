@@ -1,0 +1,46 @@
+.inputTextAreaWithLabel {
+    margin-top: .6rem;
+    margin-bottom: .6rem;
+
+    &__label {
+        max-width: 100%;
+        display: flex;
+
+        label {
+            display: block;
+            margin-bottom: .5rem;
+            color: #6489a0;
+            text-transform: uppercase;
+        }
+    }
+
+
+    &__inputwrapper {
+
+
+        &__input {
+            background-color: #f8fcfd;
+            border-radius: 7px;
+            border: 1px solid #ededed;
+            height: 10.625rem;
+            font-size: 12px;
+            padding: 16px;
+            width: 100%;
+            color: #253c4b;
+            outline: none;
+        }
+
+        &__input:read-only {
+            background-color: #f8fcfd;
+        }
+
+        &__aiIcon {
+            position: absolute;
+            cursor: pointer;
+            right: 1rem;
+            top: 2.5rem;
+            font-size: 1.5rem;
+            height: 1.5rem;
+        }
+    }
+}

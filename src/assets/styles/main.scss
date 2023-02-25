@@ -29,6 +29,21 @@
 @import "./components/tabAccordion";
 
 
+@import "./components2/inputColorWithLabel";
+@import "./components2/InputDateTimePicker";
+@import "./components2/inputMultiSelectWithModal";
+@import "./components2/inputSelectDropdown";
+@import "./components2/inputSwitchWithLabel";
+@import "./components2/inputTextAreaWithLabel";
+@import "./components2/inputTextWithLabel";
+@import "./components2/inputTextMultiAddWithLabel";
+@import "./components2/inputUrlMultiAddWithModal";
+@import "./components2/loadingOverlay";
+@import "./components2/media3dModelViewer";
+@import "./components2/mediaImage";
+@import "./components2/mediaVideo.scss";
+
+
 /* layout*/
 @import "./layout/header";
 @import "./layout/sidebars";

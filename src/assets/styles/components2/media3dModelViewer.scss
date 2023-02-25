@@ -1,0 +1,32 @@
+.media3dModelViewer {
+    &__upload {
+        position: absolute;
+        right: 2rem;
+        margin-top: -2.5rem;
+    }
+
+    &__wrapper {
+        margin-right: 1rem;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: auto !important;
+
+        &__triangle {
+            right: 0 !important;
+            z-index: 99;
+        }
+
+
+        &__video {
+            margin-right: 1rem;
+            position: relative;
+          
+            video {
+                width: 256px;
+                // height: 256px;
+            }
+        }
+
+    }
+}
