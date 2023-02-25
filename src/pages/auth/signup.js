@@ -5,7 +5,11 @@ import { useNavigate } from "react-router-dom";
 import { onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { getAuthStatusAction, signinAction } from "src/redux/thunks/authThunk";
+import {
+  getAuthStatusAction,
+  signinAction,
+  signupAction,
+} from "src/redux/thunks/authThunk";
 import Logo from "src/assets/images/brand-logo/upids-satellite-logo.png";
 import SupportIcon from "src/assets/images/login/Component_25.svg";
 import supportIcon from "src/assets/images/login/Component_25.svg";
@@ -18,7 +22,7 @@ import VisiblityWrapper from "./components/VisiblityWrapper";
 import { MdCheckBox, MdCheckBoxOutlineBlank } from "react-icons/md";
 import { auth } from "src/config/firebaseConfig";
 
-function Login() {
+function SignUp() {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -30,35 +34,11 @@ function Login() {
   const [loader, setLoader] = useState(false);
   const [showSupport, setShowSupport] = useState(false);
   const [passwordType, setPasswordType] = useState("password");
-  const [isKeepLoggedIn, setIsKeepLoggedIn] = useState(false);
 
   SupportOutsideCheck(supportCardRef, supporTextRef, setShowSupport);
 
-  const handleLangChange = (e) => {
-    i18n.changeLanguage(e.target.value);
-  };
-
-  const goToPrivacyPolicy = () => {
-    window.open(
-      "https://www.secondthought.fi/privacy-policy/",
-      "_blank", // <- This is what makes it open in a new window.
-    );
-  };
-
-  const gotoForgetPassword = () => {
-    // navigate("forgotPassword");
-    // window.open(
-    //   "https://pdm.upids.io/#/resetpassword",
-    //   "_blank", // <- This is what makes it open in a new window.
-    // );
-  };
-
-  const gotoSignup = () => {
-    navigate("/signup");
-    // window.open(
-    //   '"https://pdm.upids.io/#/signup"',
-    //   "_blank", // <- This is what makes it open in a new window.
-    // );
+  const gotoSignin = () => {
+    navigate("/login");
   };
 
   const formik = useFormik({
@@ -80,14 +60,7 @@ function Login() {
     onSubmit: async (values) => {
       try {
         setLoader(true);
-        const user = await signInWithEmailAndPassword(
-          auth,
-          values.username,
-          values.password,
-        );
-        const res = await dispatch(
-          signinAction({ ...values, isKeepLoggedIn }),
-        ).unwrap();
+        const res = await dispatch(signupAction({ ...values })).unwrap();
 
         dispatch(getAuthStatusAction());
         setLoader(false);
@@ -119,29 +92,6 @@ function Login() {
             Suite for Product Management
           </span>
         </div>
-        {/* <div className="loginPage__header__supportContainer">
-          <img src={SupportIcon} alt="supportIcon" />
-          <span
-            ref={supporTextRef}
-            onClick={() => setShowSupport(!showSupport)}
-          >
-            Need Support?
-          </span>
-        </div> */}
-        {/* <div className="loginPage__header__languageSelect pl-0">
-          <select
-            onChange={handleLangChange}
-            className="form-select"
-            aria-label="Default select example"
-          >
-            <option id="en" value="en">
-              English
-            </option>
-            <option id="fi" value="fi">
-              Finnish
-            </option>
-          </select>
-        </div> */}
 
         {!showMenu ? (
           <img
@@ -158,26 +108,6 @@ function Login() {
             className="loginPage__header__menuButton"
           />
         )}
-      </div>
-
-      <div
-        ref={supportCardRef}
-        className={
-          "supportContent ui card" +
-          (!showSupport
-            ? " supportContent__fadeOut"
-            : " supportContent__fadeIn")
-        }
-      >
-        <p className="title">{t("Happy to Help")}</p>
-        <div style={{ marginTop: 20 }}>
-          <p className="subtitle">{t("EMAIL US")}</p>
-          <p className="text">support@secondthought.fi</p>
-        </div>
-        <div style={{ marginTop: 20 }}>
-          <p className="subtitle">{t("Call Us")}</p>
-          <p className="text">+358 45 7832 7251</p>
-        </div>
       </div>
 
       <div
@@ -209,19 +139,6 @@ function Login() {
               {/* <TextWithLink text={t('Need Support ?')} color="dark" /> */}
             </span>
           </div>
-
-          <div style={{ marginTop: 23 }}>
-            <div style={{ display: "flex", flexDirection: "row" }}>
-              <p className="menu-subtitle">{t("Email Us")}</p>
-              <p className="menu-text">support@secondthought.fi</p>
-            </div>
-            <div
-              style={{ marginTop: 10, display: "flex", flexDirection: "row" }}
-            >
-              <p className="menu-subtitle">{t("Call Us")}</p>
-              <p className="menu-text">+358 45 7832 7251</p>
-            </div>
-          </div>
         </div>
 
         <div className="divider"></div>
@@ -236,8 +153,6 @@ function Login() {
           >
             {t("Privacy Policy")}
           </p>
-          {/* <p style={{ fontWeight: 'bold', fontSize: 14, color: '#182631', textDecorationLine: 'underline', textAlign: 'right', marginLeft: 50 }}>{t('Terms of Use')}</p>
-                <p style={{ fontWeight: 'bold', fontSize: 14, color: '#182631', textDecorationLine: 'underline', textAlign: 'right', marginLeft: 50 }} onClick={() => history.push("/swagger/public")}>API</p> */}
         </div>
         <p className="menu-footer mt-1">
           {t("All Right Reserved @ 2022 Second Thought Ltd")}
@@ -257,7 +172,7 @@ function Login() {
             )}
           </p>
           <div className="login-wrapper">
-            <h2 className="login-title">Sign in</h2>
+            <h2 className="login-title">Sign Up</h2>
             <form className="mb-5 login-form">
               <div className="form-group">
                 <input
@@ -292,28 +207,6 @@ function Login() {
                   {errors.password && touched.password && errors.password}
                 </p>
               </div>
-
-              {/* <div className="keep-login-container">
-                {isKeepLoggedIn ? (
-                  <MdCheckBox
-                    onClick={() => setIsKeepLoggedIn(false)}
-                    style={{ cursor: "pointer" }}
-                    color="#ffffff"
-                    size={24}
-                  />
-                ) : (
-                  <MdCheckBoxOutlineBlank
-                    onClick={() => setIsKeepLoggedIn(true)}
-                    style={{ cursor: "pointer" }}
-                    color="#203441"
-                    size={24}
-                  />
-                )}
-                <label className="keep-login-label">
-                  {t("Keep me logged in")}
-                </label>
-              </div> */}
-
               <div className="d-flex justify-content-between align-items-center ">
                 <button
                   name="login"
@@ -323,41 +216,24 @@ function Login() {
                   onClick={handleSubmit}
                 >
                   {!loader ? (
-                    t("LOGIN")
+                    t("Sign Up")
                   ) : (
                     <Spinner animation="border" variant="light" />
                   )}
                 </button>
               </div>
-              {/* <a onClick={gotoForgetPassword} className="forgot-password-link">
-                Forgot password?
-              </a> */}
             </form>
             <p className="login-wrapper-footer-text">
-              Need an account?{" "}
-              <a onClick={gotoSignup} className="text-reset signup-link">
-                Signup here
+              Already Have an account?{" "}
+              <a onClick={gotoSignin} className="text-reset signup-link">
+                Sign In here
               </a>
             </p>
           </div>
         </div>
       </div>
-
-      {/* <div className="loginPage__footer">
-        <div>
-          <p>{t("All Right Reserved @ 2022 Second Thought Ltd")}</p>
-        </div>
-        <div>
-          <p
-            style={{ marginLeft: 26, cursor: "pointer" }}
-            onClick={() => goToPrivacyPolicy()}
-          >
-            {t("Privacy Policy")}
-          </p>
-        </div>
-      </div> */}
     </div>
   );
 }
 
-export default Login;
+export default SignUp;
