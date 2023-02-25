@@ -9,15 +9,19 @@ export default [
     readOnly: false,
     type: "text",
     validationType: "string",
-    // validations: [
-    //     {
-    //         type: "matches",
-    //         params: [
-    //             "^[0-9]{0}$|^[0-9]{8}$|^[0-9]{12}$|^[0-9]{14}$",
-    //             "gtin should be 8 or 12 or 14 character & should be number.",
-    //         ],
-    //     },
-    // ],
+    validations: [
+      {
+        type: "required",
+        params: ["This field is required"],
+      },
+      // {
+      //   type: "matches",
+      //   params: [
+      //     "^[0-9]{0}$|^[0-9]{8}$|^[0-9]{12}$|^[0-9]{14}$",
+      //     "gtin should be 8 or 12 or 14 character & should be number.",
+      //   ],
+      // },
+    ],
   },
   {
     name: "phoneNumber",
@@ -38,6 +42,12 @@ export default [
     //         ],
     //     },
     // ],
+    validations: [
+      {
+        type: "required",
+        params: ["This field is required"],
+      },
+    ],
   },
   {
     name: "email",
@@ -51,6 +61,12 @@ export default [
     options: [],
     validationType: "",
     validations: [],
+    validations: [
+      {
+        type: "required",
+        params: ["This field is required"],
+      },
+    ],
   },
   {
     name: "gender",
@@ -66,7 +82,12 @@ export default [
       { value: "female", label: "Female" },
     ],
     validationType: "",
-    validations: [],
+    validations: [
+      {
+        type: "required",
+        params: ["This field is required"],
+      },
+    ],
   },
   {
     name: "designation",
@@ -82,7 +103,12 @@ export default [
       { value: "tester", label: "Tester" },
     ],
     validationType: "",
-    validations: [],
+    validations: [
+      {
+        type: "required",
+        params: ["This field is required"],
+      },
+    ],
   },
   //   {
   //     name: "address",
@@ -104,6 +130,12 @@ export default [
     placeholder: "Line 1",
     readOnly: false,
     type: "text",
+    validations: [
+      {
+        type: "required",
+        params: ["This field is required"],
+      },
+    ],
   },
   {
     name: "postalAddress[1]",
@@ -112,6 +144,12 @@ export default [
     placeholder: "Line 2",
     readOnly: false,
     type: "text",
+    validations: [
+      {
+        type: "required",
+        params: ["This field is required"],
+      },
+    ],
   },
   {
     name: "postalAddress[2]",
@@ -120,6 +158,12 @@ export default [
     placeholder: "Line 3",
     readOnly: false,
     type: "text",
+    validations: [
+      {
+        type: "required",
+        params: ["This field is required"],
+      },
+    ],
   },
   {
     name: "postalAddress[3]",
@@ -128,6 +172,12 @@ export default [
     placeholder: "Line 4",
     readOnly: false,
     type: "text",
+    validations: [
+      {
+        type: "required",
+        params: ["This field is required"],
+      },
+    ],
   },
   {
     name: "bgColor",
@@ -151,6 +201,12 @@ export default [
     type: "number",
     validationType: "string",
     // validations: [],
+    validations: [
+      {
+        type: "required",
+        params: ["This field is required"],
+      },
+    ],
   },
   {
     name: "Isuseractive",
