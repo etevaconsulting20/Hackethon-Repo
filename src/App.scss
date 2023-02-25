@@ -34,5 +34,12 @@ h1>a {
   color: #fff !important;
 }
 
+.buttons-edit {
+  display: flex;
+  justify-content: flex-end;
+
+  align-items: end;
+}
+
 
 @import "./assets/styles/main.scss";

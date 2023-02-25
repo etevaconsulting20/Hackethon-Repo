@@ -224,11 +224,11 @@ const CommonTabComponent = (props) => {
 
   return (
     <>
-    <div className="row">
-        <div className="col-9">
+    <div className="row " >
+        {/* <div className="col-9">
             
-        </div>
-        <div className="col-3">
+        </div>*/}
+        <div className="buttons-edit"> 
                   <button className="btn btn-primary m-1" onClick={handleSave}>Save</button>
                   {
                       isUpdate &&
