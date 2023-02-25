@@ -15,13 +15,13 @@ import { InputTextMultiAddWithLabel } from 'src/components/inputComponents/Input
 import { InputMultiSelectWithModal } from 'src/components/inputComponents/InputMultiSelectWithModal';
 import { InputEmailMultiAddWithModal } from 'src/components/inputComponents/InputEmailMultiAddWithModal';
 import { InputUrlMultiAddWithModal } from 'src/components/inputComponents/InputUrlMultiAddWithModal';
-import { MediaImage } from 'src/components/inputComponents/MediaImage';
-import { MediaImageOther } from 'src/components/inputComponents/MediaImageOther';
-import { MediaVideo } from 'src/components/inputComponents/MediaVideo';
-import { MediaVideoUrl } from 'src/components/inputComponents/MediaVideoUrl';
-import { Media3dmodelGlb } from 'src/components/inputComponents/Media3dmodelGlb';
-import { MediaDocumentPdf } from 'src/components/inputComponents/MediaDocumentPdf';
-import { MediaOtherFile } from 'src/components/inputComponents/MediaOtherFile';
+// import { MediaImage } from 'src/components/inputComponents/MediaImage';
+// import { MediaImageOther } from 'src/components/inputComponents/MediaImageOther';
+// import { MediaVideo } from 'src/components/inputComponents/MediaVideo';
+// import { MediaVideoUrl } from 'src/components/inputComponents/MediaVideoUrl';
+// import { Media3dmodelGlb } from 'src/components/inputComponents/Media3dmodelGlb';
+// import { MediaDocumentPdf } from 'src/components/inputComponents/MediaDocumentPdf';
+// import { MediaOtherFile } from 'src/components/inputComponents/MediaOtherFile';
 
 
 
@@ -419,186 +419,186 @@ const FormFieldSchemaRender = (props) => {
     }
 
 
-    if (newFormItem.type === "mediaImage") {
-        return (
-            <>
-                <MediaImage
-                    key={`${newFormItem.nameUpdated}_${newFormItem.type}`}
-                    section={newFormItem.section}
-                    label={t(newFormItem.label)}
-                    bottomLabel={t(newFormItem.bottomLabel)}
-                    placeholder={t(newFormItem.placeholder)}
-                    tooltipText={t(newFormItem.tooltipText)}
-                    type={newFormItem.type}
-                    name={newFormItem.nameUpdated}
-                    readOnly={newFormItem.readOnly || formReadOnly}
-                    value={_.get(formValueObject, newFormItem.nameUpdated, "")}
-                    isAllTouched={formValidationObject.isAllTouched}
-                    touched={formValidationObject.touched[newFormItem.nameUpdated]}
-                    errorMessage={_.get(formValidationObject, `errorMessage.${newFormItem.nameUpdated}`, "")}
-                    onBlur={onBlur}
-                    onChange={onChange}
-                    className={className}
-                    isSmallScreen={isSmallScreen}
-                />
-            </>
-        )
-    }
+    // if (newFormItem.type === "mediaImage") {
+    //     return (
+    //         <>
+    //             <MediaImage
+    //                 key={`${newFormItem.nameUpdated}_${newFormItem.type}`}
+    //                 section={newFormItem.section}
+    //                 label={t(newFormItem.label)}
+    //                 bottomLabel={t(newFormItem.bottomLabel)}
+    //                 placeholder={t(newFormItem.placeholder)}
+    //                 tooltipText={t(newFormItem.tooltipText)}
+    //                 type={newFormItem.type}
+    //                 name={newFormItem.nameUpdated}
+    //                 readOnly={newFormItem.readOnly || formReadOnly}
+    //                 value={_.get(formValueObject, newFormItem.nameUpdated, "")}
+    //                 isAllTouched={formValidationObject.isAllTouched}
+    //                 touched={formValidationObject.touched[newFormItem.nameUpdated]}
+    //                 errorMessage={_.get(formValidationObject, `errorMessage.${newFormItem.nameUpdated}`, "")}
+    //                 onBlur={onBlur}
+    //                 onChange={onChange}
+    //                 className={className}
+    //                 isSmallScreen={isSmallScreen}
+    //             />
+    //         </>
+    //     )
+    // }
 
 
-    if (newFormItem.type === "mediaImageOther") {
-        return (
-            <>
-                <MediaImageOther
-                    key={`${newFormItem.nameUpdated}_${newFormItem.type}`}
-                    section={newFormItem.section}
-                    label={t(newFormItem.label)}
-                    placeholder={t(newFormItem.placeholder)}
-                    tooltipText={t(newFormItem.tooltipText)}
-                    type={newFormItem.type}
-                    name={newFormItem.nameUpdated}
-                    readOnly={newFormItem.readOnly || formReadOnly}
-                    value={_.get(formValueObject, newFormItem.nameUpdated, "")}
-                    isAllTouched={formValidationObject.isAllTouched}
-                    touched={formValidationObject.touched[newFormItem.nameUpdated]}
-                    errorMessage={_.get(formValidationObject, `errorMessage.${newFormItem.nameUpdated}`, "")}
-                    onBlur={onBlur}
-                    onChange={onChange}
-                    className={className}
-                    isSmallScreen={isSmallScreen}
-                />
-            </>
-        )
-    }
+    // if (newFormItem.type === "mediaImageOther") {
+    //     return (
+    //         <>
+    //             <MediaImageOther
+    //                 key={`${newFormItem.nameUpdated}_${newFormItem.type}`}
+    //                 section={newFormItem.section}
+    //                 label={t(newFormItem.label)}
+    //                 placeholder={t(newFormItem.placeholder)}
+    //                 tooltipText={t(newFormItem.tooltipText)}
+    //                 type={newFormItem.type}
+    //                 name={newFormItem.nameUpdated}
+    //                 readOnly={newFormItem.readOnly || formReadOnly}
+    //                 value={_.get(formValueObject, newFormItem.nameUpdated, "")}
+    //                 isAllTouched={formValidationObject.isAllTouched}
+    //                 touched={formValidationObject.touched[newFormItem.nameUpdated]}
+    //                 errorMessage={_.get(formValidationObject, `errorMessage.${newFormItem.nameUpdated}`, "")}
+    //                 onBlur={onBlur}
+    //                 onChange={onChange}
+    //                 className={className}
+    //                 isSmallScreen={isSmallScreen}
+    //             />
+    //         </>
+    //     )
+    // }
 
 
-    if (newFormItem.type === "video") {
-        return (
-            <>
-                <MediaVideo
-                    key={`${newFormItem.nameUpdated}_${newFormItem.type}`}
-                    section={newFormItem.section}
-                    label={t(newFormItem.label)}
-                    placeholder={t(newFormItem.placeholder)}
-                    tooltipText={t(newFormItem.tooltipText)}
-                    type={newFormItem.type}
-                    name={newFormItem.nameUpdated}
-                    readOnly={newFormItem.readOnly || formReadOnly}
-                    value={_.get(formValueObject, newFormItem.nameUpdated, "")}
-                    isAllTouched={formValidationObject.isAllTouched}
-                    touched={formValidationObject.touched[newFormItem.nameUpdated]}
-                    errorMessage={_.get(formValidationObject, `errorMessage.${newFormItem.nameUpdated}`, "")}
-                    onBlur={onBlur}
-                    onChange={onChange}
-                    className={className}
-                    isSmallScreen={isSmallScreen}
-                />
-            </>
-        )
-    }
+    // if (newFormItem.type === "video") {
+    //     return (
+    //         <>
+    //             <MediaVideo
+    //                 key={`${newFormItem.nameUpdated}_${newFormItem.type}`}
+    //                 section={newFormItem.section}
+    //                 label={t(newFormItem.label)}
+    //                 placeholder={t(newFormItem.placeholder)}
+    //                 tooltipText={t(newFormItem.tooltipText)}
+    //                 type={newFormItem.type}
+    //                 name={newFormItem.nameUpdated}
+    //                 readOnly={newFormItem.readOnly || formReadOnly}
+    //                 value={_.get(formValueObject, newFormItem.nameUpdated, "")}
+    //                 isAllTouched={formValidationObject.isAllTouched}
+    //                 touched={formValidationObject.touched[newFormItem.nameUpdated]}
+    //                 errorMessage={_.get(formValidationObject, `errorMessage.${newFormItem.nameUpdated}`, "")}
+    //                 onBlur={onBlur}
+    //                 onChange={onChange}
+    //                 className={className}
+    //                 isSmallScreen={isSmallScreen}
+    //             />
+    //         </>
+    //     )
+    // }
 
-    if (newFormItem.type === "videoUrl") {
-        return (
-            <>
-                <MediaVideoUrl
-                    key={`${newFormItem.nameUpdated}_${newFormItem.type}`}
-                    section={newFormItem.section}
-                    label={t(newFormItem.label)}
-                    placeholder={t(newFormItem.placeholder)}
-                    tooltipText={t(newFormItem.tooltipText)}
-                    type={newFormItem.type}
-                    name={newFormItem.nameUpdated}
-                    readOnly={newFormItem.readOnly || formReadOnly}
-                    value={_.get(formValueObject, newFormItem.nameUpdated, "")}
-                    isAllTouched={formValidationObject.isAllTouched}
-                    touched={formValidationObject.touched[newFormItem.nameUpdated]}
-                    errorMessage={_.get(formValidationObject, `errorMessage.${newFormItem.nameUpdated}`, "")}
-                    onBlur={onBlur}
-                    onChange={onChange}
-                    className={className}
-                    isSmallScreen={isSmallScreen}
-                />
-            </>
-        )
-    }
-
-
-
-    if (newFormItem.type === "media3dmodel") {
-        return (
-            <>
-                <Media3dmodelGlb
-                    key={`${newFormItem.nameUpdated}_${newFormItem.type}`}
-                    section={newFormItem.section}
-                    label={t(newFormItem.label)}
-                    placeholder={t(newFormItem.placeholder)}
-                    tooltipText={t(newFormItem.tooltipText)}
-                    type={newFormItem.type}
-                    name={newFormItem.nameUpdated}
-                    readOnly={newFormItem.readOnly || formReadOnly}
-                    value={_.get(formValueObject, newFormItem.nameUpdated, "")}
-                    isAllTouched={formValidationObject.isAllTouched}
-                    touched={formValidationObject.touched[newFormItem.nameUpdated]}
-                    errorMessage={_.get(formValidationObject, `errorMessage.${newFormItem.nameUpdated}`, "")}
-                    onBlur={onBlur}
-                    onChange={onChange}
-                    className={className}
-                    isSmallScreen={isSmallScreen}
-                />
-            </>
-        )
-    }
-
-    if (newFormItem.type === "pdf") {
-        return (
-            <>
-                <MediaDocumentPdf
-                    key={`${newFormItem.nameUpdated}_${newFormItem.type}`}
-                    section={newFormItem.section}
-                    label={t(newFormItem.label)}
-                    placeholder={t(newFormItem.placeholder)}
-                    tooltipText={t(newFormItem.tooltipText)}
-                    type={newFormItem.type}
-                    name={newFormItem.nameUpdated}
-                    readOnly={newFormItem.readOnly || formReadOnly}
-                    value={_.get(formValueObject, newFormItem.nameUpdated, "")}
-                    isAllTouched={formValidationObject.isAllTouched}
-                    touched={formValidationObject.touched[newFormItem.nameUpdated]}
-                    errorMessage={_.get(formValidationObject, `errorMessage.${newFormItem.nameUpdated}`, "")}
-                    onBlur={onBlur}
-                    onChange={onChange}
-                    className={className}
-                    isSmallScreen={isSmallScreen}
-                />
-            </>
-        )
-    }
+    // if (newFormItem.type === "videoUrl") {
+    //     return (
+    //         <>
+    //             <MediaVideoUrl
+    //                 key={`${newFormItem.nameUpdated}_${newFormItem.type}`}
+    //                 section={newFormItem.section}
+    //                 label={t(newFormItem.label)}
+    //                 placeholder={t(newFormItem.placeholder)}
+    //                 tooltipText={t(newFormItem.tooltipText)}
+    //                 type={newFormItem.type}
+    //                 name={newFormItem.nameUpdated}
+    //                 readOnly={newFormItem.readOnly || formReadOnly}
+    //                 value={_.get(formValueObject, newFormItem.nameUpdated, "")}
+    //                 isAllTouched={formValidationObject.isAllTouched}
+    //                 touched={formValidationObject.touched[newFormItem.nameUpdated]}
+    //                 errorMessage={_.get(formValidationObject, `errorMessage.${newFormItem.nameUpdated}`, "")}
+    //                 onBlur={onBlur}
+    //                 onChange={onChange}
+    //                 className={className}
+    //                 isSmallScreen={isSmallScreen}
+    //             />
+    //         </>
+    //     )
+    // }
 
 
-    if (newFormItem.type === "mediaOtherFile") {
-        return (
-            <>
-                <MediaOtherFile
-                    key={`${newFormItem.nameUpdated}_${newFormItem.type}`}
-                    section={newFormItem.section}
-                    label={t(newFormItem.label)}
-                    placeholder={t(newFormItem.placeholder)}
-                    tooltipText={t(newFormItem.tooltipText)}
-                    type={newFormItem.type}
-                    name={newFormItem.nameUpdated}
-                    readOnly={newFormItem.readOnly || formReadOnly}
-                    value={_.get(formValueObject, newFormItem.nameUpdated, "")}
-                    isAllTouched={formValidationObject.isAllTouched}
-                    touched={formValidationObject.touched[newFormItem.nameUpdated]}
-                    errorMessage={_.get(formValidationObject, `errorMessage.${newFormItem.nameUpdated}`, "")}
-                    onBlur={onBlur}
-                    onChange={onChange}
-                    className={className}
-                    isSmallScreen={isSmallScreen}
-                />
-            </>
-        )
-    }
+
+    // if (newFormItem.type === "media3dmodel") {
+    //     return (
+    //         <>
+    //             <Media3dmodelGlb
+    //                 key={`${newFormItem.nameUpdated}_${newFormItem.type}`}
+    //                 section={newFormItem.section}
+    //                 label={t(newFormItem.label)}
+    //                 placeholder={t(newFormItem.placeholder)}
+    //                 tooltipText={t(newFormItem.tooltipText)}
+    //                 type={newFormItem.type}
+    //                 name={newFormItem.nameUpdated}
+    //                 readOnly={newFormItem.readOnly || formReadOnly}
+    //                 value={_.get(formValueObject, newFormItem.nameUpdated, "")}
+    //                 isAllTouched={formValidationObject.isAllTouched}
+    //                 touched={formValidationObject.touched[newFormItem.nameUpdated]}
+    //                 errorMessage={_.get(formValidationObject, `errorMessage.${newFormItem.nameUpdated}`, "")}
+    //                 onBlur={onBlur}
+    //                 onChange={onChange}
+    //                 className={className}
+    //                 isSmallScreen={isSmallScreen}
+    //             />
+    //         </>
+    //     )
+    // }
+
+    // if (newFormItem.type === "pdf") {
+    //     return (
+    //         <>
+    //             <MediaDocumentPdf
+    //                 key={`${newFormItem.nameUpdated}_${newFormItem.type}`}
+    //                 section={newFormItem.section}
+    //                 label={t(newFormItem.label)}
+    //                 placeholder={t(newFormItem.placeholder)}
+    //                 tooltipText={t(newFormItem.tooltipText)}
+    //                 type={newFormItem.type}
+    //                 name={newFormItem.nameUpdated}
+    //                 readOnly={newFormItem.readOnly || formReadOnly}
+    //                 value={_.get(formValueObject, newFormItem.nameUpdated, "")}
+    //                 isAllTouched={formValidationObject.isAllTouched}
+    //                 touched={formValidationObject.touched[newFormItem.nameUpdated]}
+    //                 errorMessage={_.get(formValidationObject, `errorMessage.${newFormItem.nameUpdated}`, "")}
+    //                 onBlur={onBlur}
+    //                 onChange={onChange}
+    //                 className={className}
+    //                 isSmallScreen={isSmallScreen}
+    //             />
+    //         </>
+    //     )
+    // }
+
+
+    // if (newFormItem.type === "mediaOtherFile") {
+    //     return (
+    //         <>
+    //             <MediaOtherFile
+    //                 key={`${newFormItem.nameUpdated}_${newFormItem.type}`}
+    //                 section={newFormItem.section}
+    //                 label={t(newFormItem.label)}
+    //                 placeholder={t(newFormItem.placeholder)}
+    //                 tooltipText={t(newFormItem.tooltipText)}
+    //                 type={newFormItem.type}
+    //                 name={newFormItem.nameUpdated}
+    //                 readOnly={newFormItem.readOnly || formReadOnly}
+    //                 value={_.get(formValueObject, newFormItem.nameUpdated, "")}
+    //                 isAllTouched={formValidationObject.isAllTouched}
+    //                 touched={formValidationObject.touched[newFormItem.nameUpdated]}
+    //                 errorMessage={_.get(formValidationObject, `errorMessage.${newFormItem.nameUpdated}`, "")}
+    //                 onBlur={onBlur}
+    //                 onChange={onChange}
+    //                 className={className}
+    //                 isSmallScreen={isSmallScreen}
+    //             />
+    //         </>
+    //     )
+    // }
 
 
     return (
